@@ -1,0 +1,14 @@
+<div class="container">
+  <div *ngIf="patients$|async as patients">There are {{patients.length}} patients</div>
+  <div *ngFor="let patient of patients$|async" class="patients">
+    <div class="patientElement">{{patient.first_name}}</div>
+    <div class="patientElement">{{patient.last_name}}</div>
+    <div class="patientElement">{{patient.email}}</div>
+    <div class="patientElement">{{patient.gender}}</div>
+    <div class="actions">
+      <div>
+        <fa-icon [icon]="faInfoCircle"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

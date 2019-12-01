@@ -6,7 +6,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MaterialImportModule} from '../core/material-import.module';
 
-
 @NgModule({
   declarations: [],
   exports: [
@@ -14,6 +13,7 @@ import {MaterialImportModule} from '../core/material-import.module';
     RouterModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     MaterialImportModule,
   ],

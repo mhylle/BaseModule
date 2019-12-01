@@ -9,10 +9,9 @@ import {SharedModule} from './shared/shared.module';
 import {MenuModule} from './shared/components/menu/menu.module';
 import {faHome} from '@fortawesome/free-solid-svg-icons';
 
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

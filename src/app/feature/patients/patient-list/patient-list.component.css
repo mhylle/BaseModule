@@ -1,0 +1,14 @@
+.container {
+  max-height: 640px;
+  overflow: auto;
+}
+
+.patients {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 7em 10em auto 5em auto;
+}
+
+.patientElement {
+  padding: 0.15em 0.5em;
+}

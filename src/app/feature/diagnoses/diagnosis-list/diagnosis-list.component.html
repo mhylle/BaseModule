@@ -1,0 +1,5 @@
+<div class="container diagnoses">
+  <div *ngFor="let diagnose of diagnoses$|async">
+    <sse-diagosis-details [diagnose]="diagnose"></sse-diagosis-details>
+  </div>
+</div>
