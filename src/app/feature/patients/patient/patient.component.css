@@ -1,0 +1,7 @@
+.patientContainer {
+  display: flex;
+}
+
+.item {
+  padding: 1em;
+}

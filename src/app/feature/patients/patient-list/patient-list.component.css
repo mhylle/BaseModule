@@ -4,11 +4,18 @@
 }
 
 .patients {
-  overflow: auto;
   display: grid;
-  grid-template-columns: 7em 10em auto 5em auto;
+  grid-template-columns: 7em 7em 15em 5em auto;
+  margin: 0 2em;
+}
+
+.header {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 0.25em;
 }
 
 .patientElement {
+  display: flex;
+  align-items: center;
   padding: 0.15em 0.5em;
 }

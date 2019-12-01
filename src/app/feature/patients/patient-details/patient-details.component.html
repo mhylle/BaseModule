@@ -1,0 +1,26 @@
+<div *ngIf="patient" class="card">
+  <div class="header">
+    <div class="item">{{patient.first_name}}</div>
+    <div class="item">{{patient.last_name}}</div>
+  </div>
+  <div class="content">
+    <div class="item">
+      <div class="label">
+        Gender
+      </div>
+      <div>{{patient.gender}}</div>
+    </div>
+    <div class="item">
+      <div class="label">
+        Email
+      </div>
+      <div>{{patient.email}}</div>
+    </div>
+    <div class="item">
+      <div class="label">
+        Diagnosis id
+      </div>
+      <div>{{patient.diagnosis}}</div>
+    </div>
+  </div>
+</div>

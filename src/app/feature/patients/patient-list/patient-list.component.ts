@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PatientService} from '../patient.service';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
-import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import {faFemale, faInfoCircle, faMale, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'sse-patient-list',
@@ -11,7 +11,15 @@ import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 })
 export class PatientListComponent implements OnInit {
   faInfoCircle = faInfoCircle;
+  faMale = faMale;
+  faFemale = faFemale;
+  faMars = faMars;
+  faVenus = faVenus;
+
   public patients$: Observable<Patient[]>;
+
+  @Output()
+  selectedPatient: EventEmitter<Patient> = new EventEmitter<Patient>();
 
   constructor(private readonly patientService: PatientService) {
   }
@@ -20,4 +28,7 @@ export class PatientListComponent implements OnInit {
     this.patients$ = this.patientService.patients;
   }
 
+  selectPatient(patient: Patient) {
+    this.selectedPatient.emit(patient);
+  }
 }

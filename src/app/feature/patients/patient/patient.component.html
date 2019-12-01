@@ -1,0 +1,4 @@
+<div class="patientContainer">
+  <sse-patient-list (selectedPatient)="selectPatient($event)" class="item"></sse-patient-list>
+  <sse-patient-details [patient]="selectedPatient" class="item"></sse-patient-details>
+</div>

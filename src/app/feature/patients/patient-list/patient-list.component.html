@@ -1,14 +1,21 @@
 <div class="container">
   <div *ngIf="patients$|async as patients">There are {{patients.length}} patients</div>
+  <div class="patients header">
+    <div class="patientElement">Given name</div>
+    <div class="patientElement">Last name</div>
+    <div class="patientElement">Email</div>
+    <div class="patientElement">Gender</div>
+    <div class="patientElement">Select</div>
+  </div>
   <div *ngFor="let patient of patients$|async" class="patients">
     <div class="patientElement">{{patient.first_name}}</div>
     <div class="patientElement">{{patient.last_name}}</div>
     <div class="patientElement">{{patient.email}}</div>
-    <div class="patientElement">{{patient.gender}}</div>
-    <div class="actions">
-      <div>
-        <fa-icon [icon]="faInfoCircle"></fa-icon>
-      </div>
+    <div class="patientElement">
+      <fa-icon [icon]="patient.gender == 'Male'? faMars : faVenus"></fa-icon>
+    </div>
+    <div class="patientElement">
+      <fa-icon (click)="selectPatient(patient)" [icon]="faInfoCircle"></fa-icon>
     </div>
   </div>
 </div>

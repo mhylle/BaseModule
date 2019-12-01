@@ -1,0 +1,25 @@
+.card {
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  font-weight: 700;
+  border-bottom: 1px solid lightgray;
+  margin: 0.25em;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 1em;
+  display: flex;
+}
+
+.label {
+  padding-right: 1em;
+}

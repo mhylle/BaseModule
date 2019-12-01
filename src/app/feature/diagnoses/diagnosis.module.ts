@@ -5,6 +5,9 @@ import {DiagosisDetailsComponent} from './diagnosis-list/diagosis-details/diagos
 
 @NgModule({
   declarations: [DiagnosisRoutingModule.components, DiagosisDetailsComponent],
+  exports: [
+    DiagosisDetailsComponent
+  ],
   imports: [
     SharedModule,
     DiagnosisRoutingModule,
