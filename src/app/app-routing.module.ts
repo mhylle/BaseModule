@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'diagnosis',
     loadChildren: () => import('./feature/diagnoses/diagnosis.module').then(m => m.DiagnosisModule)
   },
+  {
+    path: 'addresses',
+    loadChildren: () => import('./feature/addresses/addresses.module').then(m => m.AddressesModule)
+  },
   {path: '**', pathMatch: 'full', redirectTo: '/'} // catch any unfound routes and redirect to home page
 ];
 

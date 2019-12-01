@@ -1,0 +1,44 @@
+.header {
+  font-weight: 700;
+  border-bottom: 1px solid lightgray;
+  margin: 0.25em;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.item {
+  padding: 1em;
+  display: flex;
+}
+
+.address {
+}
+
+.line {
+
+}
+
+.location {
+  display: flex;
+}
+
+.postalCode {
+  padding: 0 0.25em 0 0;
+}
+
+.city {
+  padding: 0 0.25em;
+}
+
+.district {
+  padding: 0 0.25em;
+}
+
+.country {
+
+}

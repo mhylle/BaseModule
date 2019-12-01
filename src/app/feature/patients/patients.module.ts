@@ -4,6 +4,7 @@ import {PatientsRoutingModule} from './patients-routing.module';
 import {PatientComponent} from './patient/patient.component';
 import {DiagnosisModule} from '../diagnoses/diagnosis.module';
 import {PatientDetailsComponent} from './patient-details/patient-details.component';
+import {AddressesModule} from '../addresses/addresses.module';
 
 @NgModule({
   declarations: [PatientsRoutingModule.components, PatientComponent, PatientDetailsComponent],
@@ -11,6 +12,7 @@ import {PatientDetailsComponent} from './patient-details/patient-details.compone
     SharedModule,
     PatientsRoutingModule,
     DiagnosisModule,
+    AddressesModule,
   ]
 })
 export class PatientsModule {

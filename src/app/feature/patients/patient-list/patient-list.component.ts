@@ -31,4 +31,11 @@ export class PatientListComponent implements OnInit {
   selectPatient(patient: Patient) {
     this.selectedPatient.emit(patient);
   }
+
+  idTracker(index, item: Patient) {
+    if (!item) {
+      return null;
+    }
+    return item.id;
+  }
 }

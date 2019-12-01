@@ -7,7 +7,7 @@
     <div class="patientElement">Gender</div>
     <div class="patientElement">Select</div>
   </div>
-  <div *ngFor="let patient of patients$|async" class="patients">
+  <div *ngFor="let patient of patients$|async; trackBy: idTracker " class="patients">
     <div class="patientElement">{{patient.first_name}}</div>
     <div class="patientElement">{{patient.last_name}}</div>
     <div class="patientElement">{{patient.email}}</div>

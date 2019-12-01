@@ -22,5 +22,12 @@
       </div>
       <div>{{patient.diagnosis}}</div>
     </div>
+    <div *ngIf="patientAddress$|async as patientAddress; else noAddress" class="address">
+      <div class="header">This patient lives at</div>
+      <sse-address-details [address]="patientAddress"></sse-address-details>
+    </div>
+    <ng-template #noAddress>
+      <div>This patient does not have an address</div>
+    </ng-template>
   </div>
 </div>

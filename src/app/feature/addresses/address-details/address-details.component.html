@@ -1,0 +1,9 @@
+<div *ngIf="address" class="content">
+  <div class="line">{{address.line}}</div>
+  <div class="location">
+    <div *ngIf="address.postalCode" class="postalCode">{{address.postalCode}}</div>
+    <div *ngIf="address.city" class="city">{{address.city}}</div>
+    <div *ngIf="address.district" class="district">{{address.district}}</div>
+  </div>
+  <div class="country">{{address.country}}</div>
+</div>

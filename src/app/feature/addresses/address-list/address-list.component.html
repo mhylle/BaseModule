@@ -1,0 +1,7 @@
+<div *ngFor="let address of addresses$|async" class="addresses">
+  <div class="item">{{address.line}}</div>
+  <div class="item">{{address.postalCode}}</div>
+  <div class="item">{{address.city}}</div>
+  <div class="item">{{address.district}}</div>
+  <div class="item">{{address.country}}</div>
+</div>
