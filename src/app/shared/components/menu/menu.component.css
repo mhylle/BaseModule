@@ -1,0 +1,11 @@
+.menuContainer {
+  height: 35px;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  align-content: center;
+  align-items: center;
+}
+
+.menuItem {
+  padding: 0 1em;
+}
