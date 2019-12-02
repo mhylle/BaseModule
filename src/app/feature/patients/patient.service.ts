@@ -16,4 +16,12 @@ export class PatientService {
   get patients(): Observable<Patient[]> {
     return this.http.get<Patient[]>(`${environment.baseUrl}/${this.rootUrl}`);
   }
+
+  getPatient(id: string): Observable<Patient> {
+    return this.http.get<Patient>(`${environment.baseUrl}/${this.rootUrl}/${id}`);
+  }
+
+  update(patient: Patient): Observable<Patient> {
+    return this.http.put<Patient>(`${environment.baseUrl}/${this.rootUrl}/${patient.id}`, patient);
+  }
 }

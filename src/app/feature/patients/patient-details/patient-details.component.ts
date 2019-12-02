@@ -31,7 +31,6 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
   }
 
   clickEventReceived(patient: Patient) {
-    this.router.navigate([`edit/${patient.id}`]);
-    console.log(`Click event received ${patient}`);
+    this.router.navigate([`patients/edit/${patient.id}`]);
   }
 }

@@ -1,1 +1,9 @@
-<p>patient-edit works!</p>
+<div>Edit patient</div>
+<div *ngIf="patient$|async as patient">
+  <div><input [(ngModel)]="patient.first_name"></div>
+  <div><input [(ngModel)]="patient.last_name"></div>
+  <div><input [(ngModel)]="patient.email"></div>
+  <div><input [(ngModel)]="patient.gender"></div>
+  <sse-button (click)="update(patient)">Update</sse-button>
+</div>
+<div>{{message}}</div>
