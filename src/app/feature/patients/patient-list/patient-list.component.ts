@@ -30,6 +30,11 @@ export class PatientListComponent implements OnInit {
     this.selectedPatient.emit(patient);
   }
 
+  /**
+   * Performance enhancements.
+   * @param index index in the list
+   * @param item the patient we are currently at
+   */
   idTracker(index, item: Patient) {
     if (!item) {
       return null;
