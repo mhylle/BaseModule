@@ -13,6 +13,10 @@
   padding-bottom: 0.25em;
 }
 
+.header .item {
+  font-weight: 700;
+}
+
 .item {
   flex: 1;
   display: flex;

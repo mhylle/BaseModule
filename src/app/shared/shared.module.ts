@@ -6,9 +6,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MaterialImportModule} from '../core/material-import.module';
 import {ButtonComponent} from './components/button/button.component';
+import {LoadingComponent} from './components/loading/loading.component';
 
 @NgModule({
-  declarations: [ButtonComponent],
+  declarations: [ButtonComponent, LoadingComponent],
   exports: [
     CommonModule,
     RouterModule,
@@ -18,6 +19,7 @@ import {ButtonComponent} from './components/button/button.component';
     FontAwesomeModule,
     MaterialImportModule,
     ButtonComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,28 @@
-<div *ngFor="let address of addresses$|async" class="addresses">
+<sse-loading></sse-loading>
+<div class="addresses header">
+  <div (click)="sort('line', sortDirection === 'asc'? 'desc': 'asc')" class="item">Line
+    <fa-icon *ngIf="sortColumn === 'line' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
+    <fa-icon *ngIf="sortColumn === 'line' && sortDirection === 'desc' " [icon]="faSortUp"></fa-icon>
+  </div>
+  <div (click)="sort('postalCode', sortDirection === 'asc'? 'desc': 'asc')" class="item">Code
+    <fa-icon *ngIf="sortColumn === 'postalCode' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
+    <fa-icon *ngIf="sortColumn === 'postalCode' && sortDirection === 'desc' " [icon]="faSortUp"></fa-icon>
+  </div>
+  <div (click)="sort('city', sortDirection === 'asc'? 'desc': 'asc')" class="item">City
+    <fa-icon *ngIf="sortColumn === 'city' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
+    <fa-icon *ngIf="sortColumn === 'city' && sortDirection === 'desc' " [icon]="faSortUp"></fa-icon>
+
+  </div>
+  <div (click)="sort('district', sortDirection === 'asc'? 'desc': 'asc')" class="item">District
+    <fa-icon *ngIf="sortColumn === 'district' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
+    <fa-icon *ngIf="sortColumn === 'district' && sortDirection === 'desc' " [icon]="faSortUp"></fa-icon>
+  </div>
+  <div (click)="sort('country', sortDirection === 'asc'? 'desc': 'asc')" class="item">Country
+    <fa-icon *ngIf="sortColumn === 'country' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
+    <fa-icon *ngIf="sortColumn === 'country' && sortDirection === 'desc' " [icon]="faSortUp"></fa-icon>
+  </div>
+</div>
+<div *ngFor="let address of addresses" class="addresses">
   <div class="item">{{address.line}}</div>
   <div class="item">{{address.postalCode}}</div>
   <div class="item">{{address.city}}</div>
