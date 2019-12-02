@@ -23,3 +23,8 @@
 .label {
   padding-right: 1em;
 }
+
+.actions {
+  width: 100%;
+  text-align: right;
+}

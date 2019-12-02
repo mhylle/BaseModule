@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Patient} from '../model/patient.model';
 
 @Component({
   selector: 'sse-patient',
@@ -7,7 +6,7 @@ import {Patient} from '../model/patient.model';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
-  public selectedPatient: Patient;
+
 
   constructor() {
   }
@@ -15,7 +14,5 @@ export class PatientComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectPatient(patient: Patient) {
-    this.selectedPatient = patient;
-  }
+
 }

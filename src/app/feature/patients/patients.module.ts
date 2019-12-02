@@ -1,13 +1,12 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../../shared/shared.module';
 import {PatientsRoutingModule} from './patients-routing.module';
-import {PatientComponent} from './patient/patient.component';
 import {DiagnosisModule} from '../diagnoses/diagnosis.module';
-import {PatientDetailsComponent} from './patient-details/patient-details.component';
 import {AddressesModule} from '../addresses/addresses.module';
+import {PatientViewerComponent} from './patient-viewer/patient-viewer.component';
 
 @NgModule({
-  declarations: [PatientsRoutingModule.components, PatientComponent, PatientDetailsComponent],
+  declarations: [PatientsRoutingModule.components, PatientViewerComponent],
   imports: [
     SharedModule,
     PatientsRoutingModule,

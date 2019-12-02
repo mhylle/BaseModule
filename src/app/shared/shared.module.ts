@@ -5,9 +5,10 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MaterialImportModule} from '../core/material-import.module';
+import {ButtonComponent} from './components/button/button.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ButtonComponent],
   exports: [
     CommonModule,
     RouterModule,
@@ -16,6 +17,7 @@ import {MaterialImportModule} from '../core/material-import.module';
     ReactiveFormsModule,
     FontAwesomeModule,
     MaterialImportModule,
+    ButtonComponent,
   ],
   imports: [
     CommonModule,

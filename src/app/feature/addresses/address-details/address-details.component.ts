@@ -15,5 +15,4 @@ export class AddressDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -3,6 +3,7 @@ import {Patient} from '../model/patient.model';
 import {AddressesService} from '../../addresses/addresses.service';
 import {Address} from '../../addresses/model/address.model';
 import {Observable, of} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'sse-patient-details',
@@ -15,13 +16,11 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
   patient: Patient;
   public patientAddress$: Observable<Address>;
 
-  constructor(private readonly addressesService: AddressesService) {
+  constructor(private readonly router: Router, private readonly addressesService: AddressesService) {
   }
 
   ngOnInit() {
-    console.log('test0');
   }
-
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.patient && this.patient.address) {
@@ -31,4 +30,8 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
     }
   }
 
+  clickEventReceived(patient: Patient) {
+    this.router.navigate([`edit/${patient.id}`]);
+    console.log(`Click event received ${patient}`);
+  }
 }

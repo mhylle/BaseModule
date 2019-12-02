@@ -11,16 +11,10 @@
   padding: 0.5em;
 }
 
+
 .item {
   padding: 1em;
   display: flex;
-}
-
-.address {
-}
-
-.line {
-
 }
 
 .location {
@@ -37,8 +31,4 @@
 
 .district {
   padding: 0 0.25em;
-}
-
-.country {
-
 }
