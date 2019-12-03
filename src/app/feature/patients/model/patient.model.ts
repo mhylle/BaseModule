@@ -4,6 +4,6 @@ export interface Patient {
   last_name: string;
   email: string;
   gender: string;
-  diagnosis: id | number;
-  address: string | null;
+  diagnosis: number;
+  address: string;
 }

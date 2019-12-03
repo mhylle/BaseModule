@@ -1,13 +1,17 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {PatientService} from '../patient.service';
+import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
 import {faInfoCircle, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
+import {Store} from '@ngrx/store';
+import {State} from '../../../store/reducers';
+import {LoadPatients} from '../store/actions/patient.actions';
+import {selectAllPatients} from '../store/reducers';
 
 @Component({
   selector: 'sse-patient-list',
   templateUrl: './patient-list.component.html',
-  styleUrls: ['./patient-list.component.css']
+  styleUrls: ['./patient-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PatientListComponent implements OnInit {
   faInfoCircle = faInfoCircle;
@@ -19,11 +23,12 @@ export class PatientListComponent implements OnInit {
   @Output()
   selectedPatient: EventEmitter<Patient> = new EventEmitter<Patient>();
 
-  constructor(private readonly patientService: PatientService) {
+  constructor(private readonly store: Store<State>) {
   }
 
   ngOnInit() {
-    this.patients$ = this.patientService.patients;
+    this.store.dispatch(LoadPatients());
+    this.patients$ = this.store.select(selectAllPatients);
   }
 
   selectPatient(patient: Patient) {

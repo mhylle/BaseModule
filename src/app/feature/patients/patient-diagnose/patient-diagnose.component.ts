@@ -4,21 +4,21 @@ import {switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
 import {PatientService} from '../patient.service';
-import {DiagnosisService} from '../../diagnoses/diagnosis.service';
-import {Diagnosis} from '../../diagnoses/model/diagnosis.model';
+import {Diagnose} from '../../diagnoses/model/diagnose.model';
+import {DiagnoseService} from '../../diagnoses/diagnose.service';
 
 @Component({
-  selector: 'sse-patient-diagnosis',
-  templateUrl: './patient-diagnosis.component.html',
-  styleUrls: ['./patient-diagnosis.component.css']
+  selector: 'sse-patient-diagnose',
+  templateUrl: './patient-diagnose.component.html',
+  styleUrls: ['./patient-diagnose.component.css']
 })
-export class PatientDiagnosisComponent implements OnInit {
+export class PatientDiagnoseComponent implements OnInit {
   private patient$: Observable<Patient>;
-  private patientDiagnosis$: Observable<Diagnosis>;
+  private patientDiagnosis$: Observable<Diagnose>;
 
   constructor(private readonly route: ActivatedRoute,
               private readonly patientService: PatientService,
-              private diagnosisService: DiagnosisService) {
+              private diagnoseService: DiagnoseService) {
   }
 
   ngOnInit() {
@@ -30,12 +30,12 @@ export class PatientDiagnosisComponent implements OnInit {
     );
     this.patientDiagnosis$ = this.patient$.pipe(
       switchMap(patient => {
-        return this.diagnosisService.getDiagnosis(patient.diagnosis);
+        return this.diagnoseService.getDiagnose(patient.diagnosis);
       }));
   }
 
-  updateDiagnosis(diagnosis: Diagnosis, patient: Patient) {
-    patient.diagnosis = diagnosis.id;
+  updateDiagnose(diagnose: Diagnose, patient: Patient) {
+    patient.diagnosis = diagnose.id;
   }
 
   savePatient(patient: Patient) {

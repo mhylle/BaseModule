@@ -4,8 +4,8 @@ import {AddressesService} from '../../addresses/addresses.service';
 import {Address} from '../../addresses/model/address.model';
 import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
-import {Diagnosis} from '../../diagnoses/model/diagnosis.model';
-import {DiagnosisService} from '../../diagnoses/diagnosis.service';
+import {DiagnoseService} from '../../diagnoses/diagnose.service';
+import {Diagnose} from '../../diagnoses/model/diagnose.model';
 
 @Component({
   selector: 'sse-patient-details',
@@ -17,11 +17,11 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
   @Input()
   patient: Patient;
   public patientAddress$: Observable<Address>;
-  public patientDiagnosis$: Observable<Diagnosis>;
+  public patientDiagnose$: Observable<Diagnose>;
 
   constructor(private readonly router: Router,
               private readonly addressesService: AddressesService,
-              private readonly diagnosisService: DiagnosisService) {
+              private readonly diagnoseService: DiagnoseService) {
   }
 
   ngOnInit() {
@@ -35,7 +35,7 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
         this.patientAddress$ = of(null);
       }
       if (this.patient.diagnosis) {
-        this.patientDiagnosis$ = this.diagnosisService.getDiagnosis(this.patient.diagnosis);
+        this.patientDiagnose$ = this.diagnoseService.getDiagnose(this.patient.diagnosis);
       }
     }
   }
@@ -44,7 +44,7 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
     this.router.navigate([`patients/edit/${patient.id}`]);
   }
 
-  changeDiagnosis(patient: Patient) {
-    this.router.navigate([`patients/diagnosis/${patient.id}`]);
+  changeDiagnose(patient: Patient) {
+    this.router.navigate([`patients/diagnose/${patient.id}`]);
   }
 }

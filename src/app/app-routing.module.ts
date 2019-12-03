@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'diagnosis',
-    loadChildren: () => import('./feature/diagnoses/diagnosis.module').then(m => m.DiagnosisModule)
+    loadChildren: () => import('./feature/diagnoses/diagnose.module').then(m => m.DiagnoseModule)
   },
   {
     path: 'addresses',

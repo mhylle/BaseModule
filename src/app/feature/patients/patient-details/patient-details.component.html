@@ -22,14 +22,14 @@
       </div>
       <div>{{patient.diagnosis}}</div>
     </div>
-    <div *ngIf="patientDiagnosis$|async as patientDiagnosis; else noDiagnosis" class="diagnoses">
+    <div *ngIf="patientDiagnose$|async as patientDiagnose; else noDiagnose" class="diagnoses">
       <div class="header">The diagnosis is</div>
-      <div>{{patientDiagnosis.name}}</div>
-      <div>{{patientDiagnosis.description}}</div>
-      <div>{{patientDiagnosis.diagnosis}}</div>
-      <sse-button (click)="changeDiagnosis(patient)">Change Diagnosis</sse-button>
+      <div>{{patientDiagnose.name}}</div>
+      <div>{{patientDiagnose.description}}</div>
+      <div>{{patientDiagnose.diagnosis}}</div>
+      <sse-button (click)="changeDiagnose(patient)">Change Diagnosis</sse-button>
     </div>
-    <ng-template #noDiagnosis>
+    <ng-template #noDiagnose>
       <div>This patient does not have an address</div>
     </ng-template>
     <div *ngIf="patientAddress$|async as patientAddress; else noAddress" class="address">

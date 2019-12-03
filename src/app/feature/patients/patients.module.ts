@@ -1,17 +1,22 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../../shared/shared.module';
 import {PatientsRoutingModule} from './patients-routing.module';
-import {DiagnosisModule} from '../diagnoses/diagnosis.module';
 import {AddressesModule} from '../addresses/addresses.module';
-import {PatientDiagnosisComponent} from './patient-diagnosis/patient-diagnosis.component';
+import {StoreModule} from '@ngrx/store';
+import * as fromPatientState from './store/reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {PatientEffects} from './store/effects/patient.effects';
+import {DiagnoseModule} from '../diagnoses/diagnose.module';
 
 @NgModule({
-  declarations: [PatientsRoutingModule.components, PatientDiagnosisComponent],
+  declarations: [PatientsRoutingModule.components],
   imports: [
     SharedModule,
     PatientsRoutingModule,
-    DiagnosisModule,
+    DiagnoseModule,
     AddressesModule,
+    StoreModule.forFeature('patients', fromPatientState.reducers),
+    EffectsModule.forFeature([PatientEffects])
   ]
 })
 export class PatientsModule {

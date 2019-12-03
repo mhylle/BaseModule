@@ -1,4 +1,4 @@
-export interface Diagnosis {
+export interface Diagnose {
   id: number;
   name: string;
   description: string;

@@ -5,7 +5,7 @@ import {PatientComponent} from './patient/patient.component';
 import {PatientEditComponent} from './patient-edit/patient-edit.component';
 import {PatientDetailsComponent} from './patient-details/patient-details.component';
 import {PatientViewerComponent} from './patient-viewer/patient-viewer.component';
-import {PatientDiagnosisComponent} from './patient-diagnosis/patient-diagnosis.component';
+import {PatientDiagnoseComponent} from './patient-diagnose/patient-diagnose.component';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       {path: '', component: PatientViewerComponent},
       {path: 'edit/:id', component: PatientEditComponent},
-      {path: 'diagnosis/:id', component: PatientDiagnosisComponent},
+      {path: 'diagnose/:id', component: PatientDiagnoseComponent},
     ]
   },
 ];
@@ -28,6 +28,6 @@ export class PatientsRoutingModule {
     PatientDetailsComponent,
     PatientEditComponent,
     PatientViewerComponent,
+    PatientDiagnoseComponent,
   ];
-
 }

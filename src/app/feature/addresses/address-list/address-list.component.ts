@@ -1,15 +1,19 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AddressesService} from '../addresses.service';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {Address} from '../model/address.model';
 import {faSortAlphaDown, faSortAlphaUp} from '@fortawesome/free-solid-svg-icons';
 import * as _ from 'lodash';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+import {State} from '../../../store/reducers';
+import {Store} from '@ngrx/store';
+import {LoadAddresses} from '../store/actions/address.actions';
+import {selectAllAddresses} from '../store/reducers';
 
 @Component({
   selector: 'sse-address-list',
   templateUrl: './address-list.component.html',
-  styleUrls: ['./address-list.component.css']
+  styleUrls: ['./address-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddressListComponent implements OnInit, OnDestroy {
   public faSortUp = faSortAlphaUp;
@@ -20,11 +24,12 @@ export class AddressListComponent implements OnInit, OnDestroy {
 
   private unsubscribe: Subject<void> = new Subject();
 
-  constructor(private readonly addressesService: AddressesService) {
+  constructor(private readonly store: Store<State>) {
   }
 
   ngOnInit() {
-    this.addressesService.addresses.pipe(takeUntil(this.unsubscribe)).subscribe(addresses => {
+    this.store.dispatch(LoadAddresses());
+    this.store.select(selectAllAddresses).pipe(takeUntil(this.unsubscribe)).subscribe(addresses => {
       this.addresses = addresses;
       this.sort(this.sortColumn, this.sortDirection);
     });
