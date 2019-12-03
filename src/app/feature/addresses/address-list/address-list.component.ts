@@ -45,5 +45,16 @@ export class AddressListComponent implements OnInit, OnDestroy {
     this.addresses = _.orderBy(this.addresses, sortColumn, sortDirection);
   }
 
+  /**
+   * Performance enhancements.
+   * @param index index in the list
+   * @param item the patient we are currently at
+   */
+  idTracker(index, item: Address) {
+    if (!item) {
+      return null;
+    }
+    return item.id;
+  }
 
 }

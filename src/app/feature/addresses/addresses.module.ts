@@ -4,7 +4,7 @@ import {AddressesRoutingModule} from './addresses-routing.module';
 import {AddressDetailsComponent} from './address-details/address-details.component';
 
 @NgModule({
-  declarations: [AddressesRoutingModule.components, AddressDetailsComponent,],
+  declarations: [AddressesRoutingModule.components],
   exports: [
     AddressDetailsComponent
   ],

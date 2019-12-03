@@ -22,7 +22,7 @@
   </div>
 </div>
 <cdk-virtual-scroll-viewport [itemSize]="20" class="table">
-  <div *cdkVirtualFor="let address of addresses" class="addresses">
+  <div *cdkVirtualFor="let address of addresses; trackBy: idTracker" class="addresses">
     <div class="item">{{address.line}}</div>
     <div class="item">{{address.postalCode}}</div>
     <div class="item">{{address.city}}</div>

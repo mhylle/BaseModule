@@ -2,6 +2,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {AddressesComponent} from './addresses/addresses.component';
 import {AddressListComponent} from './address-list/address-list.component';
+import {AddressDetailsComponent} from './address-details/address-details.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AddressesRoutingModule {
-  static components = [AddressesComponent, AddressListComponent];
+  static components = [AddressesComponent, AddressListComponent, AddressDetailsComponent];
 
 }
