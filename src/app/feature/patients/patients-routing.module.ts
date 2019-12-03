@@ -21,6 +21,11 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class PatientsRoutingModule {
-  static components = [PatientListComponent, PatientComponent, PatientDetailsComponent, PatientEditComponent];
+  static components = [PatientListComponent,
+    PatientComponent,
+    PatientDetailsComponent,
+    PatientEditComponent,
+    PatientViewerComponent,
+  ];
 
 }

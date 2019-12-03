@@ -3,10 +3,9 @@ import {SharedModule} from '../../shared/shared.module';
 import {PatientsRoutingModule} from './patients-routing.module';
 import {DiagnosisModule} from '../diagnoses/diagnosis.module';
 import {AddressesModule} from '../addresses/addresses.module';
-import {PatientViewerComponent} from './patient-viewer/patient-viewer.component';
 
 @NgModule({
-  declarations: [PatientsRoutingModule.components, PatientViewerComponent],
+  declarations: [PatientsRoutingModule.components],
   imports: [
     SharedModule,
     PatientsRoutingModule,

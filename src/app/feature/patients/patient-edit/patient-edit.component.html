@@ -1,9 +1,17 @@
 <div>Edit patient</div>
 <div *ngIf="patient$|async as patient">
-  <div><input [(ngModel)]="patient.first_name"></div>
-  <div><input [(ngModel)]="patient.last_name"></div>
-  <div><input [(ngModel)]="patient.email"></div>
-  <div><input [(ngModel)]="patient.gender"></div>
+  <div><label>Firstname
+    <input [(ngModel)]="patient.first_name">
+  </label></div>
+  <div><label>Lastname
+    <input [(ngModel)]="patient.last_name">
+  </label></div>
+  <div><label>Email
+    <input [(ngModel)]="patient.email">
+  </label></div>
+  <div><label>Gender
+    <input [(ngModel)]="patient.gender">
+  </label></div>
   <sse-button (click)="update(patient)">Update</sse-button>
 </div>
 <div>{{message}}</div>
