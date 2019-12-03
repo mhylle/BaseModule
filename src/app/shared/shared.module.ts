@@ -7,6 +7,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MaterialImportModule} from '../core/material-import.module';
 import {ButtonComponent} from './components/button/button.component';
 import {LoadingComponent} from './components/loading/loading.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [ButtonComponent, LoadingComponent],
@@ -20,6 +21,7 @@ import {LoadingComponent} from './components/loading/loading.component';
     MaterialImportModule,
     ButtonComponent,
     LoadingComponent,
+    ScrollingModule,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import {LoadingComponent} from './components/loading/loading.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     MaterialImportModule,
+    ScrollingModule,
   ],
   providers: []
 })

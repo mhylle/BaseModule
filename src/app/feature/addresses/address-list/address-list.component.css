@@ -1,6 +1,5 @@
-.container {
-  max-height: 640px;
-  overflow: auto;
+.table {
+  height: 80vh;
 }
 
 .addresses {
@@ -15,6 +14,7 @@
 
 .header .item {
   font-weight: 700;
+  cursor: pointer;
 }
 
 .item {

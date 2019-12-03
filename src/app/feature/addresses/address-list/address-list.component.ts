@@ -14,7 +14,7 @@ import {Subject} from 'rxjs';
 export class AddressListComponent implements OnInit, OnDestroy {
   public faSortUp = faSortAlphaUp;
   public faSortDown = faSortAlphaDown;
-  public addresses: Address[];
+  public addresses: Address[] = [];
   public sortColumn = 'line';
   public sortDirection = 'asc';
 
