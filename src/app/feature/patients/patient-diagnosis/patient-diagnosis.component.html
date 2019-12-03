@@ -1,0 +1,15 @@
+<div *ngIf="patient$|async as patient">
+  <div>{{patient.first_name}} {{patient.last_name}} currently has the diagnosis</div>
+  <div *ngIf="patientDiagnosis$|async as patientDiagnosis">
+    <div>{{patientDiagnosis.name}}</div>
+    <div>{{patientDiagnosis.description}}</div>
+  </div>
+  <div>
+    Switch to:
+    <sse-diagnosis-selector (diagnosisChanged)="updateDiagnosis($event, patient)"
+                            [selectedDiagnosisId]="patient.diagnosis"></sse-diagnosis-selector>
+  </div>
+  <div>
+    <sse-button (click)="savePatient(patient)">Update</sse-button>
+  </div>
+</div>

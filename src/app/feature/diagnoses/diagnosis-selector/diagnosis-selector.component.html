@@ -1,0 +1,3 @@
+<select (change)="diagnosisChange()" [(ngModel)]="selectedDiagnosis" class="select-css">
+  <option *ngFor="let diagnosis of diagnoses$|async" [ngValue]="diagnosis">{{diagnosis.name}}</option>
+</select>

@@ -22,6 +22,16 @@
       </div>
       <div>{{patient.diagnosis}}</div>
     </div>
+    <div *ngIf="patientDiagnosis$|async as patientDiagnosis; else noDiagnosis" class="diagnoses">
+      <div class="header">The diagnosis is</div>
+      <div>{{patientDiagnosis.name}}</div>
+      <div>{{patientDiagnosis.description}}</div>
+      <div>{{patientDiagnosis.diagnosis}}</div>
+      <sse-button (click)="changeDiagnosis(patient)">Change Diagnosis</sse-button>
+    </div>
+    <ng-template #noDiagnosis>
+      <div>This patient does not have an address</div>
+    </ng-template>
     <div *ngIf="patientAddress$|async as patientAddress; else noAddress" class="address">
       <div class="header">This patient lives at</div>
       <sse-address-details [address]="patientAddress"></sse-address-details>
@@ -31,6 +41,6 @@
     </ng-template>
   </div>
   <div class="actions">
-    <sse-button (click)="clickEventReceived(patient)">Edit</sse-button>
+    <sse-button (click)="editPatient(patient)">Edit</sse-button>
   </div>
 </div>

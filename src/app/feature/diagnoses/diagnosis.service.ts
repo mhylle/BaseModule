@@ -16,4 +16,8 @@ export class DiagnosisService {
   get diagnoses(): Observable<Diagnosis[]> {
     return this.http.get<Diagnosis[]>(`${environment.baseUrl}/${this.rootUrl}`);
   }
+
+  getDiagnosis(diagnosis: number): Observable<Diagnosis> {
+    return this.http.get<Diagnosis>(`${environment.baseUrl}/${this.rootUrl}/${diagnosis}`);
+  }
 }
