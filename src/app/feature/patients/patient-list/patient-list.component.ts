@@ -4,8 +4,9 @@ import {Patient} from '../model/patient.model';
 import {faInfoCircle, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
 import {Store} from '@ngrx/store';
 import {State} from '../../../store/reducers';
-import {LoadPatients} from '../store/actions/patient.actions';
-import {selectAllPatients} from '../store/reducers';
+import {LoadPatients} from '../store/actions';
+import {selectAllPatients} from '../store/selectors';
+
 
 @Component({
   selector: 'sse-patient-list',

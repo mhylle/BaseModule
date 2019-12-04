@@ -1,5 +1,5 @@
 <div>Edit patient</div>
-<div *ngIf="patient$|async as patient">
+<div *ngIf="patient">
   <div><label>Firstname
     <input [(ngModel)]="patient.first_name">
   </label></div>
@@ -14,4 +14,3 @@
   </label></div>
   <sse-button (click)="update(patient)">Update</sse-button>
 </div>
-<div>{{message}}</div>

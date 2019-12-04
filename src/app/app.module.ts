@@ -11,11 +11,11 @@ import {faHome} from '@fortawesome/free-solid-svg-icons';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {LoadingInterceptor} from './core/interceptors/loading.interceptor';
 import {StoreModule} from '@ngrx/store';
-import {metaReducers, reducers} from './store/reducers';
+import {CustomSerializer, metaReducers, reducers} from './store/reducers';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
-import {StoreRouterConnectingModule} from '@ngrx/router-store';
+import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import {StoreRouterConnectingModule} from '@ngrx/router-store';
     provide: HTTP_INTERCEPTORS,
     useClass: LoadingInterceptor,
     multi: true
-  }],
+  }, {provide: RouterStateSerializer, useClass: CustomSerializer}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

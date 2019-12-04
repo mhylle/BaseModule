@@ -26,7 +26,7 @@ export const selectAllDiagnoses = createSelector(
   fromDiagnoses.selectAll
 );
 
-export const selectDiagnoseById = (diagnoseId: string) => createSelector(
+export const selectDiagnoseById = (diagnoseId: number) => createSelector(
   selectDiagnoseEntitiesState,
   diagnoseState => diagnoseState.entities[diagnoseId]
 );

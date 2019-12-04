@@ -28,7 +28,15 @@ export const patientReducer = createReducer(
     loaded: true,
     error: null
   })),
-);
+  on(PatientActions.UpdatePatient, (state, {patient}) => ({...state, loading: true, loaded: false, error: null})),
+  on(PatientActions.PatientUpdated, (state, {patient}) => adapter.upsertOne(patient, {
+      ...state,
+      loading: false,
+      loaded: true,
+      error: null
+    })
+  ));
+
 
 export const {
   selectAll,
@@ -36,3 +44,7 @@ export const {
   selectIds,
   selectTotal
 } = adapter.getSelectors();
+
+export const getPatientEntities = (state: PatientState) => state.entities;
+export const getPatientsLoaded = (state: PatientState) => state.loaded;
+export const getPatientsLoading = (state: PatientState) => state.loading;

@@ -1,4 +1,4 @@
-import {ActionReducerMap, createFeatureSelector, MetaReducer} from '@ngrx/store';
+import {ActionReducerMap, createFeatureSelector, createSelector, MetaReducer} from '@ngrx/store';
 import {environment} from '../../../environments/environment';
 import * as fromRouter from '@ngrx/router-store';
 import {routerReducer, RouterReducerState, RouterStateSerializer} from '@ngrx/router-store';
@@ -19,10 +19,13 @@ export const reducers: ActionReducerMap<State> = {
   router: routerReducer,
 };
 
-
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
-export const selectRouter = createFeatureSelector<State, fromRouter.RouterReducerState<any>>('router');
+export const selectRouter = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');
 
+export const getRouterInfo = createSelector(
+  selectRouter,
+  state => state.state
+);
 const {
   selectQueryParams,    // select the current route query params
   selectQueryParam,     // factory function to select a query param
@@ -33,7 +36,6 @@ const {
 } = fromRouter.getSelectors(selectRouter);
 
 export const selectRouteId = selectRouteParam('id');
-export const selectStatus = selectQueryParam('status');
 
 @Injectable()
 export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
