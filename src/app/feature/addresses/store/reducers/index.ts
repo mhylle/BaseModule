@@ -1,6 +1,7 @@
 import * as fromAddresses from './address.reducer';
 import * as fromRoot from '../../../../store/reducers';
 import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
+import * as _ from 'lodash';
 
 export interface AddressState {
   addresses: fromAddresses.AddressState;
@@ -24,6 +25,11 @@ export const selectAddressEntitiesState = createSelector(
 export const selectAllAddresses = createSelector(
   selectAddressEntitiesState,
   fromAddresses.selectAll
+);
+
+export const selectSortedAddresses = (sortColumn: string, sortOrder: string) => createSelector(
+  selectAllAddresses,
+  addresses => _.orderBy(addresses, sortColumn, sortOrder)
 );
 
 export const selectAddressById = (addressId: string) => createSelector(
