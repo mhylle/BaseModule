@@ -26,7 +26,9 @@ export class PatientDiagnoseComponent implements OnInit {
     this.patient$ = this.store.select(getSelectedPatient);
     this.patientDiagnosis$ = this.patient$.pipe(
       switchMap(patient => {
-        return this.store.select(selectDiagnoseById(patient.diagnosis));
+        if (patient) {
+          return this.store.select(selectDiagnoseById(patient.diagnosis));
+        }
       }));
   }
 
