@@ -1,11 +1,11 @@
 import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Patient} from '../model/patient.model';
-import {AddressesService} from '../../addresses/addresses.service';
-import {Address} from '../../addresses/model/address.model';
+import {Patient} from '../../model/patient.model';
+import {AddressesService} from '../../../addresses/addresses.service';
+import {Address} from '../../../addresses/model/address.model';
 import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
-import {DiagnoseService} from '../../diagnoses/diagnose.service';
-import {Diagnose} from '../../diagnoses/model/diagnose.model';
+import {DiagnoseService} from '../../../diagnoses/diagnose.service';
+import {Diagnose} from '../../../diagnoses/model/diagnose.model';
 
 @Component({
   selector: 'sse-patient-details',

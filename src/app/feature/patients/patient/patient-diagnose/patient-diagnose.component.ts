@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {Patient} from '../model/patient.model';
-import {Diagnose} from '../../diagnoses/model/diagnose.model';
-import {State} from '../../../store/reducers';
+import {Patient} from '../../model/patient.model';
+import {Diagnose} from '../../../diagnoses/model/diagnose.model';
+import {State} from '../../../../store/reducers';
 import {Store} from '@ngrx/store';
-import {getSelectedPatient} from '../store/selectors';
-import {UpdatePatient} from '../store/actions';
-import {selectDiagnoseById} from '../../diagnoses/store/reducers';
+import {getSelectedPatient} from '../../store/selectors';
+import {UpdatePatient} from '../../store/actions';
+import {selectDiagnoseById} from '../../../diagnoses/store/reducers';
 
 @Component({
   selector: 'sse-patient-diagnose',

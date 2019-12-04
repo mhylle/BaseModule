@@ -1,11 +1,11 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {PatientListComponent} from './patient-list/patient-list.component';
+import {PatientListComponent} from './patient/patient-list/patient-list.component';
 import {PatientComponent} from './patient/patient.component';
-import {PatientEditComponent} from './patient-edit/patient-edit.component';
-import {PatientDetailsComponent} from './patient-details/patient-details.component';
-import {PatientViewerComponent} from './patient-viewer/patient-viewer.component';
-import {PatientDiagnoseComponent} from './patient-diagnose/patient-diagnose.component';
+import {PatientEditComponent} from './patient/patient-edit/patient-edit.component';
+import {PatientDetailsComponent} from './patient/patient-details/patient-details.component';
+import {PatientViewerComponent} from './patient/patient-viewer/patient-viewer.component';
+import {PatientDiagnoseComponent} from './patient/patient-diagnose/patient-diagnose.component';
 
 const routes: Routes = [
   {

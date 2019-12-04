@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Patient} from '../model/patient.model';
-import {State} from '../../../store/reducers';
+import {Patient} from '../../model/patient.model';
+import {State} from '../../../../store/reducers';
 import {Store} from '@ngrx/store';
-import {getSelectedPatient} from '../store/selectors';
-import {UpdatePatient} from '../store/actions';
+import {getSelectedPatient} from '../../store/selectors';
+import {UpdatePatient} from '../../store/actions';
 
 @Component({
   selector: 'sse-patient-edit',

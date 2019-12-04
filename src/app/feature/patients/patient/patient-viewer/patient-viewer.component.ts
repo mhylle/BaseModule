@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Patient} from '../model/patient.model';
+import {Patient} from '../../model/patient.model';
 
 @Component({
   selector: 'sse-patient-viewer',
