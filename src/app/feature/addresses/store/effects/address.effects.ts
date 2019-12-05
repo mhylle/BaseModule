@@ -3,13 +3,22 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import * as fromAddresses from '../reducers';
 import {selectAllAddresses} from '../reducers';
-import {catchError, map, switchMap, withLatestFrom} from 'rxjs/operators';
+import {catchError, map, mergeMap, switchMap, withLatestFrom} from 'rxjs/operators';
 import {EMPTY} from 'rxjs';
-import {AddressesLoaded, LoadAddresses} from '../actions/address.actions';
+import {AddressesLoaded, AddressLoaded, LoadAddress, LoadAddresses} from '../actions/address.actions';
 import {AddressesService} from '../../addresses.service';
 
 @Injectable()
 export class AddressEffects {
+  // noinspection JSUnusedGlobalSymbols
+  loadAddress$ = createEffect(() => this.actions$.pipe(
+    ofType(LoadAddress),
+    mergeMap((action) => this.addressesService.getAddress(action.addressId).pipe(
+      map(address => ({type: AddressLoaded.type, address})),
+      catchError(() => EMPTY)
+    ))
+  ));
+
   // noinspection JSUnusedGlobalSymbols
   loadAddresses$ = createEffect(() => this.actions$.pipe(
     ofType(LoadAddresses),

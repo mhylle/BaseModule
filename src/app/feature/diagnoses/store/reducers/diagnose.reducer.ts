@@ -28,6 +28,13 @@ export const diagnoseReducer = createReducer(
     loaded: true,
     error: null
   })),
+  on(DiagnoseActions.LoadDiagnosis, state => ({...state, loading: true, loaded: false, error: null})),
+  on(DiagnoseActions.DiagnoseLoaded, (state, {diagnose}) => adapter.addOne(diagnose, {
+    ...state,
+    loading: false,
+    loaded: true,
+    error: null
+  })),
 );
 
 export const {

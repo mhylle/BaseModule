@@ -28,6 +28,13 @@ export const addressReducer = createReducer(
     loaded: true,
     error: null
   })),
+  on(AddressActions.LoadAddress, state => ({...state, loading: true, loaded: false, error: null})),
+  on(AddressActions.AddressLoaded, (state, {address}) => adapter.addOne(address, {
+    ...state,
+    loading: false,
+    loaded: true,
+    error: null
+  })),
 );
 
 export const {

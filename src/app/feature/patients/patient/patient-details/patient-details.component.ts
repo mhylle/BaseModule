@@ -1,11 +1,15 @@
 import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Patient} from '../../model/patient.model';
-import {AddressesService} from '../../../addresses/addresses.service';
 import {Address} from '../../../addresses/model/address.model';
 import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
-import {DiagnoseService} from '../../../diagnoses/diagnose.service';
 import {Diagnose} from '../../../diagnoses/model/diagnose.model';
+import {State} from '../../../../store/reducers';
+import {Store} from '@ngrx/store';
+import {selectAddressById} from '../../../addresses/store/reducers';
+import {selectDiagnoseById} from '../../../diagnoses/store/reducers';
+import {LoadDiagnosis} from '../../../diagnoses/store/actions/diagnose.actions';
+import {LoadAddress} from '../../../addresses/store/actions/address.actions';
 
 @Component({
   selector: 'sse-patient-details',
@@ -20,8 +24,7 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
   public patientDiagnose$: Observable<Diagnose>;
 
   constructor(private readonly router: Router,
-              private readonly addressesService: AddressesService,
-              private readonly diagnoseService: DiagnoseService) {
+              private store: Store<State>) {
   }
 
   ngOnInit() {
@@ -30,12 +33,14 @@ export class PatientDetailsComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (this.patient) {
       if (this.patient.address) {
-        this.patientAddress$ = this.addressesService.getAddress(this.patient.address);
+        this.store.dispatch(LoadAddress({addressId: this.patient.address}));
+        this.patientAddress$ = this.store.select(selectAddressById(this.patient.address));
       } else {
         this.patientAddress$ = of(null);
       }
       if (this.patient.diagnosis) {
-        this.patientDiagnose$ = this.diagnoseService.getDiagnose(this.patient.diagnosis);
+        this.store.dispatch(LoadDiagnosis({diagnoseId: this.patient.diagnosis}));
+        this.patientDiagnose$ = this.store.select(selectDiagnoseById(this.patient.diagnosis));
       }
     }
   }

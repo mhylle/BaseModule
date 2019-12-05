@@ -30,14 +30,14 @@
       <sse-button (click)="changeDiagnose(patient)">Change Diagnosis</sse-button>
     </div>
     <ng-template #noDiagnose>
-      <div>This patient does not have an address</div>
+      <div>This patient does not have an diagnose</div>
     </ng-template>
     <div *ngIf="patientAddress$|async as patientAddress; else noAddress" class="address">
       <div class="header">This patient lives at</div>
       <sse-address-details [address]="patientAddress"></sse-address-details>
     </div>
     <ng-template #noAddress>
-      <div>This patient does not have an address</div>
+      <div>This patient does not have a address</div>
     </ng-template>
   </div>
   <div class="actions">
