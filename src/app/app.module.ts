@@ -11,11 +11,12 @@ import {faHome} from '@fortawesome/free-solid-svg-icons';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {LoadingInterceptor} from './core/interceptors/loading.interceptor';
 import {StoreModule} from '@ngrx/store';
-import {CustomSerializer, metaReducers, reducers} from './store/reducers';
+import {CustomSerializer, metaReducers, reducers} from './store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-store';
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,12 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-s
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
