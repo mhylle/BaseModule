@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import {PatientListComponent} from './patient-list.component';
+import {StoreModule} from '@ngrx/store';
 
 describe('PatientListComponent', () => {
   let component: PatientListComponent;
@@ -8,6 +9,7 @@ describe('PatientListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [StoreModule.forRoot({})],
       declarations: [PatientListComponent]
     })
       .compileComponents();

@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import {AddressListComponent} from './address-list.component';
+import {StoreModule} from '@ngrx/store';
 
 describe('AddressListComponent', () => {
   let component: AddressListComponent;
@@ -8,6 +9,7 @@ describe('AddressListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [StoreModule.forRoot({})],
       declarations: [AddressListComponent]
     })
       .compileComponents();
