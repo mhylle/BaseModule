@@ -5,7 +5,7 @@ import {AddressesModule} from '../addresses/addresses.module';
 import {StoreModule} from '@ngrx/store';
 import * as fromPatientState from './store/reducers';
 import {EffectsModule} from '@ngrx/effects';
-import {PatientEffects} from './store/effects';
+import {PatientEffects} from './store';
 import {DiagnoseModule} from '../diagnoses/diagnose.module';
 
 @NgModule({

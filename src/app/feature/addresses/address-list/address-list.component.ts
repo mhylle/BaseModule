@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/co
 import {Address} from '../model/address.model';
 import {faSortAlphaDown, faSortAlphaUp} from '@fortawesome/free-solid-svg-icons';
 import {Observable, Subject} from 'rxjs';
-import {State} from '../../../store/reducers';
+import {State} from '../../../store';
 import {Store} from '@ngrx/store';
 import {LoadAddresses} from '../store/actions/address.actions';
 import {selectSortedAddresses} from '../store/reducers';

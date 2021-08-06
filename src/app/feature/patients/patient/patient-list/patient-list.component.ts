@@ -3,10 +3,8 @@ import {Observable} from 'rxjs';
 import {Patient} from '../../model/patient.model';
 import {faInfoCircle, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
 import {Store} from '@ngrx/store';
-import {State} from '../../../../store/reducers';
-import {LoadPatients} from '../../store/actions';
-import {selectAllPatients} from '../../store/selectors';
-
+import {State} from '../../../../store';
+import {LoadPatients, selectAllPatients} from '../../store';
 
 @Component({
   selector: 'sse-patient-list',
