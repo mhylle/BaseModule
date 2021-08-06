@@ -3,10 +3,9 @@ import {switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Patient} from '../../model/patient.model';
 import {Diagnose} from '../../../diagnoses/model/diagnose.model';
-import {State} from '../../../../store/reducers';
+import {State} from '../../../../store';
 import {Store} from '@ngrx/store';
-import {getSelectedPatient} from '../../store/selectors';
-import {UpdatePatient} from '../../store/actions';
+import {getSelectedPatient, UpdatePatient} from '../../store';
 import {selectDiagnoseById} from '../../../diagnoses/store/reducers';
 
 @Component({
@@ -15,8 +14,8 @@ import {selectDiagnoseById} from '../../../diagnoses/store/reducers';
   styleUrls: ['./patient-diagnose.component.css']
 })
 export class PatientDiagnoseComponent implements OnInit {
-  private patient$: Observable<Patient>;
-  private patientDiagnosis$: Observable<Diagnose>;
+  patient$: Observable<Patient>;
+  patientDiagnosis$: Observable<Diagnose>;
   public selectedDiagnose?: Diagnose;
 
   constructor(private readonly store: Store<State>) {

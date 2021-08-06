@@ -13,12 +13,12 @@ import {Router} from '@angular/router';
 export class PatientEffects {
   // noinspection JSUnusedGlobalSymbols
   updatePatient$ = createEffect(() => this.actions$.pipe(
-    ofType(UpdatePatient),
-    mergeMap((action) => this.patientService.update(action.patient)
-      .pipe(
-        map(patient => ({type: PatientUpdated.type, patient})),
-        catchError((err) => of({type: UpdatePatientFailed.type, err}))
-      ))
+      ofType(UpdatePatient),
+      mergeMap((action) => this.patientService.update(action.patient)
+        .pipe(
+          map(patient => ({type: PatientUpdated.type, patient})),
+          catchError((err) => of({type: UpdatePatientFailed.type, err}))
+        ))
     )
   );
 
@@ -35,17 +35,17 @@ export class PatientEffects {
   );
   // noinspection JSUnusedGlobalSymbols
   patientUpdated$ = createEffect(() => this.actions$.pipe(
-    ofType(PatientUpdated),
-    concatMap(action => of(action).pipe(
-      withLatestFrom(this.store.pipe(select(fromPatients.getAllPatients)))
-    )),
-    tap(([result]) => {
-        if (result) {
-          // noinspection JSIgnoredPromiseFromCall
-          this.router.navigate([`/patients`]);
+      ofType(PatientUpdated),
+      concatMap(action => of(action).pipe(
+        withLatestFrom(this.store.pipe(select(fromPatients.getAllPatients)))
+      )),
+      tap(([result]) => {
+          if (result) {
+            // noinspection JSIgnoredPromiseFromCall
+            this.router.navigate([`/patients`]);
+          }
         }
-      }
-    )),
+      )),
     {dispatch: false}
   );
 

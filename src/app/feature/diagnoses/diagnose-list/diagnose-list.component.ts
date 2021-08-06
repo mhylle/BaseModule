@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Diagnose} from '../model/diagnose.model';
 import {Store} from '@ngrx/store';
-import {State} from '../../../store/reducers';
+import {State} from '../../../store';
 import {LoadDiagnoses} from '../store/actions/diagnose.actions';
 import {selectAllDiagnoses} from '../store/reducers';
 
@@ -15,7 +15,7 @@ import {selectAllDiagnoses} from '../store/reducers';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DiagnoseListComponent implements OnInit {
-  private diagnoses$: Observable<Diagnose[]>;
+  diagnoses$: Observable<Diagnose[]>;
 
   constructor(private readonly store: Store<State>) {
   }

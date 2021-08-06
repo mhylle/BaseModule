@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 
 import {Diagnose} from '../model/diagnose.model';
 import {Store} from '@ngrx/store';
-import {State} from '../../../store/reducers';
+import {State} from '../../../store';
 import {LoadDiagnoses} from '../store/actions/diagnose.actions';
 import {selectAllDiagnoses, selectDiagnoseById} from '../store/reducers';
 
@@ -21,7 +21,7 @@ export class DiagnoseSelectorComponent implements OnInit {
 
   selectedDiagnose: Diagnose;
   selectedDiagnose$: Observable<Diagnose>;
-  private diagnoses$: Observable<Diagnose[]>;
+  diagnoses$: Observable<Diagnose[]>;
 
   constructor(private readonly store: Store<State>) {
   }
@@ -33,7 +33,7 @@ export class DiagnoseSelectorComponent implements OnInit {
     this.selectedDiagnose$.subscribe(diagnose => this.selectedDiagnose = diagnose);
   }
 
-  diagnoseChange($event: Event) {
+  diagnoseChange() {
     this.diagnoseChanged.emit(this.selectedDiagnose);
   }
 }
