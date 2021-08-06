@@ -9,7 +9,7 @@ import {Diagnosis} from '../model/diagnosis.model';
   styleUrls: ['./diagnosis-list.component.css']
 })
 export class DiagnosisListComponent implements OnInit {
-  private diagnoses$: Observable<Diagnosis[]>;
+  diagnoses$: Observable<Diagnosis[]>;
 
   constructor(private readonly diagnosisService: DiagnosisService) {
   }

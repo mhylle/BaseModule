@@ -12,7 +12,7 @@ import {Patient} from '../model/patient.model';
 })
 export class PatientEditComponent implements OnInit {
   message: string;
-  private patient$: Observable<Patient>;
+  patient$: Observable<Patient>;
 
   constructor(private readonly route: ActivatedRoute, private readonly patientService: PatientService) {
   }

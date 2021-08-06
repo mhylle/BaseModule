@@ -13,8 +13,8 @@ import {Diagnosis} from '../../diagnoses/model/diagnosis.model';
   styleUrls: ['./patient-diagnosis.component.css']
 })
 export class PatientDiagnosisComponent implements OnInit {
-  private patient$: Observable<Patient>;
-  private patientDiagnosis$: Observable<Diagnosis>;
+  patient$: Observable<Patient>;
+  patientDiagnosis$: Observable<Diagnosis>;
 
   constructor(private readonly route: ActivatedRoute,
               private readonly patientService: PatientService,
@@ -24,7 +24,7 @@ export class PatientDiagnosisComponent implements OnInit {
   ngOnInit() {
     this.patient$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
-          return this.patientService.getPatient(params.get('id'));
+        return this.patientService.getPatient(params.get('id'));
         }
       )
     );

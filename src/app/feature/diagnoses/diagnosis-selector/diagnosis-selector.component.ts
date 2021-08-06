@@ -14,7 +14,7 @@ export class DiagnosisSelectorComponent implements OnInit {
   @Output()
   diagnosisChanged: EventEmitter<Diagnosis> = new EventEmitter<Diagnosis>();
   selectedDiagnosis: Diagnosis;
-  private diagnoses$: Observable<Diagnosis[]>;
+  diagnoses$: Observable<Diagnosis[]>;
 
   constructor(private readonly diagnosisService: DiagnosisService) {
   }
