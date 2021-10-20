@@ -11,6 +11,9 @@ import {AddressesService} from '../../addresses.service';
 @Injectable()
 export class AddressEffects {
   // noinspection JSUnusedGlobalSymbols
+  /**
+   * Load a specific address and once it is  loaded initiate the {AddressLoaded} command
+   */
   loadAddress$ = createEffect(() => this.actions$.pipe(
     ofType(LoadAddress),
     mergeMap((action) => this.addressesService.getAddress(action.addressId).pipe(
@@ -20,6 +23,9 @@ export class AddressEffects {
   ));
 
   // noinspection JSUnusedGlobalSymbols
+  /**
+   * Load all addresses and once they are loaded initiate the {AddressesLoaded} command
+   */
   loadAddresses$ = createEffect(() => this.actions$.pipe(
     ofType(LoadAddresses),
     withLatestFrom(this.store.select(selectAllAddresses)),

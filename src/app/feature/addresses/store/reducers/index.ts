@@ -22,16 +22,28 @@ export const selectAddressEntitiesState = createSelector(
   state => state.addresses
 );
 
+/**
+ * Retrieve all addresses
+ */
 export const selectAllAddresses = createSelector(
   selectAddressEntitiesState,
   fromAddresses.selectAll
 );
 
+/**
+ * Retrieve all addresses sorter on a specific field and in other ascending or descending order.
+ * @param sortColumn the column to sort by.
+ * @param sortOrder the order to sort by, 'asc' or 'desc'
+ */
 export const selectSortedAddresses = (sortColumn: string, sortOrder: string) => createSelector(
   selectAllAddresses,
   addresses => _.orderBy(addresses, sortColumn, sortOrder)
 );
 
+/**
+ * Retrieve an address by it's id
+ * @param addressId the id to get the address by.
+ */
 export const selectAddressById = (addressId: string) => createSelector(
   selectAddressEntitiesState,
   addressState => addressState.entities[addressId]

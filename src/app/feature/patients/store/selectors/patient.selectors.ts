@@ -11,16 +11,26 @@ export const selectPatientEntitiesState = createSelector(
   state => state.patients
 );
 
+/**
+ * Returns all the patients in the store
+ */
 export const selectAllPatients = createSelector(
   selectPatientEntitiesState,
   fromPatients.selectAll
 );
 
+/**
+ * Retrieve a specific patient based on the patients id
+ * @param patientId the id of the patient.
+ */
 export const selectPatientById = (patientId: string) => createSelector(
   selectPatientEntitiesState,
   patientState => patientState.entities[patientId]
 );
 
+/**
+ * If a patient have been selected, retrive it from here.
+ */
 export const getSelectedPatient = createSelector(
   selectPatientEntitiesState,
   fromRoot.getRouterInfo,

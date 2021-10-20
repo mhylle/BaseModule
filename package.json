@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "json-server": "json-server --watch db.json",
-    "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/BaseModule"
+    "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/BaseModule",
+    "compodoc": "npx compodoc -p tsconfig.doc.json --includes markdown"
   },
   "private": true,
   "dependencies": {

@@ -21,11 +21,18 @@ export const selectDiagnoseEntitiesState = createSelector(
   state => state.diagnoses
 );
 
+/**
+ * Retrieve all diagnoses from the state
+ */
 export const selectAllDiagnoses = createSelector(
   selectDiagnoseEntitiesState,
   fromDiagnoses.selectAll
 );
 
+/**
+ * Select a specific diagnose based on an id
+ * @param diagnoseId the id of the diagnose we wish to retrieve.
+ */
 export const selectDiagnoseById = (diagnoseId: number) => createSelector(
   selectDiagnoseEntitiesState,
   diagnoseState => diagnoseState.entities[diagnoseId]

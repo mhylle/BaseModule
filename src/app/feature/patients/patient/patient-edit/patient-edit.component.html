@@ -1,5 +1,5 @@
 <div>Edit patient</div>
-<div *ngIf="patient">
+<div *ngIf="patient$|async as patient">
   <div><label>Firstname
     <input [(ngModel)]="patient.first_name">
   </label></div>
