@@ -14,7 +14,7 @@ export const reducers: ActionReducerMap<DiagnoseState> = {
   diagnoses: fromDiagnoses.diagnoseReducer
 };
 
-export const selectDiagnoseState = createFeatureSelector<State, DiagnoseState>('diagnoses');
+export const selectDiagnoseState = createFeatureSelector< DiagnoseState>('diagnoses');
 
 export const selectDiagnoseEntitiesState = createSelector(
   selectDiagnoseState,

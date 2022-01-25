@@ -4,7 +4,7 @@ import * as fromRoot from '../../../../store/reducers';
 import {PatientState, State} from '../reducers';
 import {Patient} from '../../model/patient.model';
 
-export const selectPatientState = createFeatureSelector<State, PatientState>('patients');
+export const selectPatientState = createFeatureSelector< PatientState>('patients');
 
 export const selectPatientEntitiesState = createSelector(
   selectPatientState,
