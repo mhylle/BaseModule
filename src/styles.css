@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  font-family: 'Roboto', HelveticatNeue-Light, HelveticatNeue, Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --systematic-blue: #0776A0;
+  --header-background: #0776A0;
+  --header-color: #fff;
+  --selection-color: #FF8500;
+  --card-header-top-curve: 0.1em;
+  --container-margin: 0.5em;
+  --mobile-container-margin: 0.25em;
+  --content-padding: 0.5em;
+  --header-height: 2em;
+  --header-font-size: 1.1em;
+  --list-row-height: 2.25em;
+}

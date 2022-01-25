@@ -4,6 +4,9 @@ import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
 import {environment} from '../../../../environments/environment';
 
+/**
+ * The patient service is responsible for handling all patient related requests to the backend.
+ */
 @Injectable({
   providedIn: 'root'
 })

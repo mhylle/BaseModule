@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Basemodule documentation",
+    "file": "basemodule.md"
+  },
+  {
+    "title": "Patient Module",
+    "file": "patient/patient.md",
+    "children": [
+      {
+        "title": "Patient sub stuff",
+        "file": "patient/patient-sub.md"
+      }
+    ]
+  }
+]
