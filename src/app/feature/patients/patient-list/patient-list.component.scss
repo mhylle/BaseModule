@@ -5,8 +5,7 @@
 }
 
 .example-viewport {
-  height: 600px;
-
+  min-height: 600px;
 }
 
 .patients {
@@ -19,6 +18,7 @@
 
 .patients:hover {
   background-color: #c0c0c0;
+
   &:hover {
     border-bottom: 1px solid #497a8f;
   }
