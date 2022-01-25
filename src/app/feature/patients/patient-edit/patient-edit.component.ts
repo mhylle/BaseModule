@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
-import {PatientService} from '../patient.service';
+import {PatientService} from '../services/patient.service';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
 

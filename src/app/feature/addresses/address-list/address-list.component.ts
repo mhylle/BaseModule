@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AddressesService} from '../addresses.service';
+import {AddressesService} from '../services/addresses.service';
 import {Address} from '../model/address.model';
 import {faSortAlphaDown, faSortAlphaUp} from '@fortawesome/free-solid-svg-icons';
 import * as _ from 'lodash';

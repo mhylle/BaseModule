@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {PatientService} from '../patient.service';
+import {PatientService} from '../services/patient.service';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
 import {faInfoCircle, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';

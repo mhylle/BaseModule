@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {DiagnosisService} from '../diagnosis.service';
+import {DiagnosisService} from '../services/diagnosis.service';
 import {Observable} from 'rxjs';
 import {Diagnosis} from '../model/diagnosis.model';
 

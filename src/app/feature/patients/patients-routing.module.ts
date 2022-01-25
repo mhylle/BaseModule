@@ -28,6 +28,7 @@ export class PatientsRoutingModule {
     PatientDetailsComponent,
     PatientEditComponent,
     PatientViewerComponent,
+    PatientDiagnosisComponent
   ];
 
 }

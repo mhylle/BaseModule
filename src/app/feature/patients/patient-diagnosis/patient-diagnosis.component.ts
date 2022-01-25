@@ -3,8 +3,8 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Patient} from '../model/patient.model';
-import {PatientService} from '../patient.service';
-import {DiagnosisService} from '../../diagnoses/diagnosis.service';
+import {PatientService} from '../services/patient.service';
+import {DiagnosisService} from '../../diagnoses/services/diagnosis.service';
 import {Diagnosis} from '../../diagnoses/model/diagnosis.model';
 
 @Component({
