@@ -8,9 +8,12 @@ import {Component, OnInit} from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() {
+    // inject http service here
   }
 
+  // initialize diagnosis variable and retrieve diagnosis data from server
   ngOnInit() {
+    // get diagnosis data from server
   }
 
 }
