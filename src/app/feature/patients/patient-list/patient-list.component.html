@@ -1,5 +1,5 @@
-<div class="container">
-  <div *ngIf="patients$|async as patients">There are {{patients.length}} patients</div>
+<div class="container" *ngIf="patients$|async as patients">
+  <div>There are {{patients.length}} patients</div>
   <div class="patients header">
     <div class="patientElement">Given name</div>
     <div class="patientElement">Last name</div>
@@ -7,18 +7,33 @@
     <div class="patientElement">Gender</div>
     <div class="patientElement">Select</div>
   </div>
-  <div *ngFor="let patient of patients$|async; trackBy: idTracker; let odd = odd; let even=even"
-       [ngClass]="{odd: odd, even: even}"
-       class="patients">
-    <div class="patientElement">{{patient.first_name}}</div>
-    <div class="patientElement">{{patient.last_name}}</div>
-    <div class="patientElement">{{patient.email}}</div>
-    <div class="patientElement">
-      <fa-icon [icon]="patient.gender == 'Male'? faMars : faVenus"></fa-icon>
+  <cdk-virtual-scroll-viewport [itemSize]="24" class="example-viewport">
+    <div *cdkVirtualFor="let patient of patients; trackBy: idTracker; let odd = odd; let even=even"
+         [ngClass]="{odd: odd, even: even}"
+         class="patients">
+      <div class="patientElement">{{patient.first_name}}</div>
+      <div class="patientElement">{{patient.last_name}}</div>
+      <div class="patientElement">{{patient.email}}</div>
+      <div class="patientElement">
+        <fa-icon [icon]="patient.gender == 'Male'? faMars : faVenus"></fa-icon>
+      </div>
+      <div class="patientElement actionItem">
+        <fa-icon (click)="selectPatient(patient)" [icon]="faInfoCircle"></fa-icon>
+      </div>
     </div>
-    <div class="patientElement actionItem">
-      <fa-icon (click)="selectPatient(patient)" [icon]="faInfoCircle"></fa-icon>
-    </div>
-  </div>
+  </cdk-virtual-scroll-viewport>
+  <!--  <div *ngFor="let patient of patients$|async; trackBy: idTracker; let odd = odd; let even=even"-->
+  <!--       [ngClass]="{odd: odd, even: even}"-->
+  <!--       class="patients">-->
+  <!--    <div class="patientElement">{{patient.first_name}}</div>-->
+  <!--    <div class="patientElement">{{patient.last_name}}</div>-->
+  <!--    <div class="patientElement">{{patient.email}}</div>-->
+  <!--    <div class="patientElement">-->
+  <!--      <fa-icon [icon]="patient.gender == 'Male'? faMars : faVenus"></fa-icon>-->
+  <!--    </div>-->
+  <!--    <div class="patientElement actionItem">-->
+  <!--      <fa-icon (click)="selectPatient(patient)" [icon]="faInfoCircle"></fa-icon>-->
+  <!--    </div>-->
+  <!--  </div>-->
 </div>
 

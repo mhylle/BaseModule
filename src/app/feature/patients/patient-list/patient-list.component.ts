@@ -7,7 +7,7 @@ import {faInfoCircle, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'sse-patient-list',
   templateUrl: './patient-list.component.html',
-  styleUrls: ['./patient-list.component.css']
+  styleUrls: ['./patient-list.component.scss']
 })
 export class PatientListComponent implements OnInit {
   faInfoCircle = faInfoCircle;
