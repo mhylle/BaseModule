@@ -1,18 +1,28 @@
-<div class="menuContainer animate blur ">
-  <div class="menuItem animate blur delay-1" routerLink="home">
-    <fa-icon [icon]="faHome"></fa-icon>
-    Home
-  </div>
-  <div class="menuItem animate blur delay-2" routerLink="/patients">
-    <fa-icon [icon]="faUserInjured"></fa-icon>
-    Patients
-  </div>
-  <div class="menuItem animate blur delay-3" routerLink="/diagnosis">
-    <fa-icon [icon]="faDiagnosis"></fa-icon>
-    Diagnoses
-  </div>
-  <div class="menuItem animate blur delay-4" routerLink="/addresses">
-    <fa-icon [icon]="faDiagnosis"></fa-icon>
-    Addresses
-  </div>
-</div>
+<nav id="menu">
+  <ul>
+    <li routerLink="home" class="menuItem animate blur delay-1">
+      <div title="Home">
+        <fa-icon [icon]="faHome"></fa-icon>
+        Home
+      </div>
+    </li>
+    <li routerLink="/patients" class="menuItem animate blur delay-2">
+      <div title="patients">
+        <fa-icon [icon]="faUserInjured"></fa-icon>
+        Patients
+      </div>
+    </li>
+    <li routerLink="/diagnosis" class="menuItem animate blur delay-3">
+      <div title="diagnoses">
+        <fa-icon [icon]="faDiagnosis"></fa-icon>
+        Diagnoses
+      </div>
+    </li>
+    <li routerLink="/addresses" class="menuItem animate blur delay-4">
+      <div title="adresses">
+        <fa-icon [icon]="faDiagnosis"></fa-icon>
+        Addresses
+      </div>
+    </li>
+  </ul>
+</nav>
