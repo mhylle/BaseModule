@@ -24,7 +24,7 @@ export class PatientDiagnosisComponent implements OnInit {
   ngOnInit() {
     this.patient$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
-        return this.patientService.getPatient(params.get('id'));
+          return this.patientService.getPatient(params.get('id'));
         }
       )
     );
