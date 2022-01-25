@@ -31,7 +31,7 @@ export class PatientListComponent implements OnInit {
   }
 
   /**
-   * Performance enhancements.
+   * Performance enhancements. This helps angular making sure that the DOM is not updated
    * @param index index in the list
    * @param item the patient we are currently at
    */

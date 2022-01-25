@@ -1,5 +1,5 @@
-<div class="container diagnoses">
-  <div *ngFor="let diagnose of diagnoses$|async">
+<div class="container diagnoses" *ngIf="diagnoses$|async as diagnoses" [@listAnimation]="diagnoses.length">
+  <div *ngFor="let diagnose of diagnoses">
     <sse-diagosis-details [diagnose]="diagnose"></sse-diagosis-details>
   </div>
 </div>

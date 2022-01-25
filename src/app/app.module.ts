@@ -1,4 +1,3 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {dom, library} from '@fortawesome/fontawesome-svg-core';
@@ -10,13 +9,14 @@ import {MenuModule} from './shared/components/menu/menu.module';
 import {faHome} from '@fortawesome/free-solid-svg-icons';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {LoadingInterceptor} from './core/interceptors/loading.interceptor';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,

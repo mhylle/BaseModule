@@ -1,33 +1,5 @@
 @import "../../animation";
 
-//.menuContainer {
-//  height: 35px;
-//  display: flex;
-//  border-bottom: 1px solid lightgray;
-//  align-content: center;
-//  align-items: center;
-//  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(241, 196, 27, 0.4) 100%);
-//  box-shadow: 0 1px 6px -2px rgba(65, 64, 49, 0.25);
-//  -webkit-box-shadow: 0 1px 6px -2px rgba(65, 64, 49,0.25);
-//  -moz-box-shadow: 0 1px 6px -2px rgba(65, 64, 49,0.25);
-//  transition: box-shadow 0.3s ease-in-out;
-//  &:hover {
-//    box-shadow: 0 6px 6px -2px rgba(65, 64, 49, 0.25);
-//    -webkit-box-shadow: 0 6px 6px -2px rgba(65, 64, 49,0.25);
-//    -moz-box-shadow: 0 6px 6px -2px rgba(65, 64, 49,0.25);
-//
-//  }
-//}
-
-
-//.menuItem {
-//  cursor: pointer;
-//  padding: 0 1em;
-//  border-right: 3px solid lightgray;
-//  transform: skew(-15deg);
-//}
-
-
 ul {
   border-bottom: 1px solid #ccc;
   list-style: none;
@@ -60,6 +32,7 @@ li {
   text-decoration: none;
   transition: all .25s ease-in-out;
   &:hover {
+    cursor: pointer;
     background-position: bottom center;
     color: rgba(0,0,0,.75);
   }
