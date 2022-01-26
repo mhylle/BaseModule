@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "json-server": "json-server --watch db.json",
-    "start-docserver": "npx compodoc -p tsconfig.doc.json --includes markdown && http-server -p 8080 -c-1 documentation",
+    "start-docserver": "npx compodoc -p tsconfig.doc.json --includes markdown && http-server -p 8088 -c-1 documentation",
     "compodoc": "npx compodoc -p tsconfig.doc.json --includes markdown"
   },
   "private": true,

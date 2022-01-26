@@ -5,7 +5,12 @@ project 'ngrx' exists to demonstrate how to implement the redux pattern in the p
 
 Be aware that as this is a demo project, some essentials such as testing has not been implemented.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
+The project consists of a basic json server containing some test data. The json server is a powerful tool for running
+locally against a simple rest server. For more information on how the json server works,
+see https://github.com/typicode/json-server.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14, but is updated to
+the newest version of angular when released.
 
 ## Development server
 
@@ -14,6 +19,9 @@ endpoints: `http://localhost:3000/diagnoses`, `http://localhost:3000/patients`, 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
 any of the source files.
+
+Run 'start-docserver' for a documentation server. Navigate to `http://localhost:8088/`. This step requires you to have
+the http-server installed. You can install it with `npm install -g http-server`.
 
 ## Code scaffolding
 
@@ -37,11 +45,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out
 the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-npm i @fortawesome/angular-fontawesome @fortawesome/fontawesome-free @fortawesome/fontawesome-svg-core
-@fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
-"@fortawesome/angular-fontawesome": "^0.7.0",
-"@fortawesome/fontawesome-free": "^5.11.2",
-"@fortawesome/fontawesome-svg-core": "^1.2.25",
-"@fortawesome/free-regular-svg-icons": "^5.11.2",
-"@fortawesome/free-solid-svg-icons": "^5.11.2",
