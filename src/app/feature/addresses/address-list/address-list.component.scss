@@ -1,0 +1,48 @@
+.table {
+  height: 80vh;
+  overflow-x: hidden;
+}
+
+.addresses {
+  display: flex;
+  margin: 0 2em;
+  height: 2.5rem;
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(171, 171, 171, 0.49);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: rgba(241, 196, 27, 0.32);
+  }
+
+  &:hover::after {
+    background-color: #ef0a0a;
+  }
+}
+
+.header {
+  border-bottom: 1px solid lightgray;
+  padding: 0.5em 0;
+
+  &.item {
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0.15em 0.5em;
+}

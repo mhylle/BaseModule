@@ -10,7 +10,6 @@
   <div (click)="sort('city', sortDirection === 'asc'? 'desc': 'asc')" class="item">City
     <fa-icon *ngIf="sortColumn === 'city' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
     <fa-icon *ngIf="sortColumn === 'city' && sortDirection === 'desc' " [icon]="faSortUp"></fa-icon>
-
   </div>
   <div (click)="sort('district', sortDirection === 'asc'? 'desc': 'asc')" class="item">District
     <fa-icon *ngIf="sortColumn === 'district' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>

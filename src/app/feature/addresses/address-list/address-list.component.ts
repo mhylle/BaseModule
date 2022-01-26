@@ -9,7 +9,7 @@ import {Subject} from 'rxjs';
 @Component({
   selector: 'sse-address-list',
   templateUrl: './address-list.component.html',
-  styleUrls: ['./address-list.component.css']
+  styleUrls: ['./address-list.component.scss']
 })
 export class AddressListComponent implements OnInit, OnDestroy {
   public faSortUp = faSortAlphaUp;
