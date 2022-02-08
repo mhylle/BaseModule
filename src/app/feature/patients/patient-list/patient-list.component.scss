@@ -17,7 +17,7 @@
 }
 
 .patients:hover {
-  background-color: #c0c0c0;
+  background-color: var(--hover-color);
 
   &:hover {
     border-bottom: 1px solid #497a8f;

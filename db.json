@@ -604,7 +604,7 @@
   "patients": [
     {
       "id": 1,
-      "first_name": "Bart12",
+      "first_name": "Bart",
       "last_name": "Calliss",
       "email": "bcalliss0@thetimes.co.uk",
       "gender": "Male",
@@ -617,7 +617,7 @@
       "last_name": "Akess",
       "email": "aakess1@google.cn",
       "gender": "Male",
-      "diagnosis": 8,
+      "diagnosis": 2,
       "address": "5de41c91fc13ae297c00021b"
     },
     {
