@@ -1,0 +1,13 @@
+.container {
+  margin-top: 20px;
+}
+
+.container div:first-of-type {
+  font-size: 2em;
+}
+
+.container div:last-of-type {
+  font-style: italic;
+}
+
+
