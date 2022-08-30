@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Diagnose} from '../model/diagnose.model';
 import {Store} from '@ngrx/store';
-import {DiagnoseState, getSelectedDiagnose} from '../store/reducers/diagnose.reducer';
+import {DiagnoseState} from '../store/reducers/diagnose.reducer';
+import {getSelectedDiagnose} from '../store/selectors';
 
 @Component({
   selector: 'sse-diagnosis',
