@@ -604,12 +604,12 @@
   "patients": [
     {
       "id": 1,
-      "first_name": "Bart12",
+      "first_name": "Bart",
       "last_name": "Calliss",
-      "email": "bcalliss0@thetimes.co.uk",
+      "address": "5de41c91fc13ae297c0001a6",
       "gender": "Male",
       "diagnosis": 8,
-      "address": "5de41c91fc13ae297c0001a6"
+      "email": "bcalliss0@thetimes.co.uk"
     },
     {
       "id": 2,
