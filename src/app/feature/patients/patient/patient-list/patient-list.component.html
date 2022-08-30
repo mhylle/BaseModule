@@ -1,5 +1,8 @@
 <div class="container">
   <div *ngIf="patients$|async as patients">There are {{patients.length}} patients</div>
+  <ng-container *ngIf="loading$|async as loading">
+    <div>Currently loading</div>
+  </ng-container>
   <div class="wrapper">
     <div class="table">
       <div class="row header">

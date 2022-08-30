@@ -6,7 +6,7 @@ import {Diagnose} from '../../../diagnoses/model/diagnose.model';
 import {State} from '../../../../store';
 import {Store} from '@ngrx/store';
 import {getSelectedPatient, UpdatePatient} from '../../store';
-import {selectDiagnoseById} from '../../../diagnoses/store/reducers';
+import {selectDiagnoseById} from '../../../diagnoses/store/selectors';
 
 @Component({
   selector: 'sse-patient-diagnose',

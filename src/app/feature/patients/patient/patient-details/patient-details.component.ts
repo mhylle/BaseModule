@@ -4,12 +4,12 @@ import {Address} from '../../../addresses/model/address.model';
 import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
 import {Diagnose} from '../../../diagnoses/model/diagnose.model';
-import {State} from '../../../../store/reducers';
+import {State} from '../../../../store';
 import {Store} from '@ngrx/store';
 import {selectAddressById} from '../../../addresses/store/reducers';
-import {selectDiagnoseById} from '../../../diagnoses/store/reducers';
 import {LoadDiagnosis} from '../../../diagnoses/store/actions/diagnose.actions';
 import {LoadAddress} from '../../../addresses/store/actions/address.actions';
+import {selectDiagnoseById} from '../../../diagnoses/store/selectors';
 
 @Component({
   selector: 'sse-patient-details',

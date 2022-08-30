@@ -4,7 +4,7 @@ import {Patient} from '../../model/patient.model';
 import {faInfoCircle, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
 import {Store} from '@ngrx/store';
 import {State} from '../../../../store';
-import {LoadPatients, selectAllPatients} from '../../store';
+import {getPatientsLoading, LoadPatients, selectAllPatients} from '../../store';
 
 /**
  * This component is responsible for creating a list of patients.
@@ -20,6 +20,7 @@ export class PatientListComponent implements OnInit {
   faMars = faMars;
   faVenus = faVenus;
 
+  public loading$: Observable<boolean>;
   public patients$: Observable<Patient[]>;
 
   /**
@@ -29,6 +30,7 @@ export class PatientListComponent implements OnInit {
   selectedPatient: EventEmitter<Patient> = new EventEmitter<Patient>();
 
   constructor(private readonly store: Store<State>) {
+    this.loading$ = this.store.select(getPatientsLoading);
   }
 
   /**

@@ -5,7 +5,7 @@ import {Diagnose} from '../model/diagnose.model';
 import {Store} from '@ngrx/store';
 import {State} from '../../../store';
 import {LoadDiagnoses} from '../store/actions/diagnose.actions';
-import {selectAllDiagnoses, selectDiagnoseById} from '../store/reducers';
+import {selectAllDiagnoses, selectDiagnoseById} from '../store/selectors';
 
 @Component({
   selector: 'sse-diagnose-selector',
