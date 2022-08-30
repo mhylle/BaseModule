@@ -5,7 +5,7 @@ import {AddressesModule} from '../addresses/addresses.module';
 import {StoreModule} from '@ngrx/store';
 import * as fromPatientState from './store/reducers';
 import {EffectsModule} from '@ngrx/effects';
-import {PatientEffects} from './store';
+import {PatientEffects, patientStoreKey} from './store';
 import {DiagnoseModule} from '../diagnoses/diagnose.module';
 
 @NgModule({
@@ -15,7 +15,7 @@ import {DiagnoseModule} from '../diagnoses/diagnose.module';
     PatientsRoutingModule,
     DiagnoseModule,
     AddressesModule,
-    StoreModule.forFeature('patients', fromPatientState.reducers),
+    StoreModule.forFeature(patientStoreKey, fromPatientState.reducers),
     EffectsModule.forFeature([PatientEffects])
   ]
 })

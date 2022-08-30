@@ -11,10 +11,10 @@ export interface State extends fromRoot.State {
 }
 
 export const reducers: ActionReducerMap<DiagnoseState> = {
-  diagnoses: fromDiagnoses.diagnoseReducer
+  diagnoses: fromDiagnoses.diagnoseReducer,
 };
 
-export const selectDiagnoseState = createFeatureSelector< DiagnoseState>('diagnoses');
+export const selectDiagnoseState = createFeatureSelector<DiagnoseState>('diagnoses');
 
 export const selectDiagnoseEntitiesState = createSelector(
   selectDiagnoseState,
@@ -29,6 +29,7 @@ export const selectAllDiagnoses = createSelector(
   fromDiagnoses.selectAll
 );
 
+
 /**
  * Select a specific diagnose based on an id
  * @param diagnoseId the id of the diagnose we wish to retrieve.
@@ -42,3 +43,8 @@ export const {
   selectAll: getAllDiagnoses,
   selectEntities: selectDiagnoseEntities
 } = fromDiagnoses.adapter.getSelectors(selectDiagnoseEntitiesState);
+
+export const getSelectedDiagnose = createSelector(
+  selectDiagnoseEntitiesState,
+  fromDiagnoses.getSelectedDiagnose
+);

@@ -10,13 +10,15 @@ export const adapter: EntityAdapter<Diagnose> = createEntityAdapter<Diagnose>({
 export interface DiagnoseState extends EntityState<Diagnose> {
   loaded: boolean;
   loading: boolean;
+  selectedDiagnose?: Diagnose;
   error: Error;
 }
 
 export const initialState: DiagnoseState = adapter.getInitialState({
   loaded: false,
   loading: false,
-  error: null
+  error: null,
+  selectedDiagnose: null
 });
 
 export const diagnoseReducer = createReducer(
@@ -35,7 +37,14 @@ export const diagnoseReducer = createReducer(
     loaded: true,
     error: null
   })),
-);
+  on(DiagnoseActions.SelectDiagnose, (state, {diagnose}) => ({
+      ...state,
+      loading: false,
+      loaded: true,
+      error: null,
+      selectedDiagnose: diagnose
+    })
+  ));
 
 export const {
   selectAll,
@@ -43,3 +52,5 @@ export const {
   selectIds,
   selectTotal
 } = adapter.getSelectors();
+
+export const getSelectedDiagnose = (state: DiagnoseState) => state.selectedDiagnose;

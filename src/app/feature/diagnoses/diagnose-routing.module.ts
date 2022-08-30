@@ -3,9 +3,18 @@ import {NgModule} from '@angular/core';
 import {DiagnoseListComponent} from './diagnose-list/diagnose-list.component';
 import {DiagnoseSelectorComponent} from './diagnose-selector/diagnose-selector.component';
 import {DiagnoseDetailsComponent} from './diagnose-list/diagnose-details/diagnose-details.component';
+import {DiagnosisComponent} from './diagnosis/diagnosis.component';
 
 const routes: Routes = [
-  {path: '', component: DiagnoseListComponent},
+  {
+    path: '', component: DiagnosisComponent,
+    children: [
+      {
+        path: '',
+        component: DiagnoseListComponent
+      }
+    ]
+  },
 ];
 
 @NgModule({

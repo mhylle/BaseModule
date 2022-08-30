@@ -1,0 +1,5 @@
+<ng-container *ngIf="selectedDiagnosis$|async as diagnosis">
+  <div>{{diagnosis.name}}</div>
+  <div>{{diagnosis.description}}</div>
+</ng-container>
+<router-outlet></router-outlet>

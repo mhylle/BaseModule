@@ -1,10 +1,12 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 import * as fromPatients from '../reducers/patient.reducer';
 import * as fromRoot from '../../../../store/reducers';
-import {PatientState, State} from '../reducers';
+import {PatientState} from '../reducers';
 import {Patient} from '../../model/patient.model';
 
-export const selectPatientState = createFeatureSelector< PatientState>('patients');
+export const patientStoreKey = 'patients';
+
+export const selectPatientState = createFeatureSelector<PatientState>(patientStoreKey);
 
 export const selectPatientEntitiesState = createSelector(
   selectPatientState,
@@ -29,7 +31,7 @@ export const selectPatientById = (patientId: string) => createSelector(
 );
 
 /**
- * If a patient have been selected, retrive it from here.
+ * If a patient have been selected, retrieve it from here.
  */
 export const getSelectedPatient = createSelector(
   selectPatientEntitiesState,

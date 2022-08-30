@@ -28,7 +28,8 @@ export const patientReducer = createReducer(
     loaded: true,
     error: null
   })),
-  on(PatientActions.UpdatePatient, (state, {patient}) => ({...state, loading: true, loaded: false, error: null})),
+  on(PatientActions.LoadPatientsFailed, (state, {error}) => ({...state, loading: false, loaded: false, error})),
+  on(PatientActions.UpdatePatient, (state) => ({...state, loading: true, loaded: false, error: null})),
   on(PatientActions.PatientUpdated, (state, {patient}) => adapter.upsertOne(patient, {
       ...state,
       loading: false,
