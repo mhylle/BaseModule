@@ -45,3 +45,11 @@ npm i @fortawesome/angular-fontawesome @fortawesome/fontawesome-free @fortawesom
 "@fortawesome/fontawesome-svg-core": "^1.2.25",
 "@fortawesome/free-regular-svg-icons": "^5.11.2",
 "@fortawesome/free-solid-svg-icons": "^5.11.2",
+
+
+
+//    "@fortawesome/angular-fontawesome": "^0.9.0",
+//    "@fortawesome/fontawesome-free": "^5.15.4",
+//    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+//    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+//    "@fortawesome/free-solid-svg-icons": "^5.15.4",
