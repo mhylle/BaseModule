@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DiagnosisComponent} from './diagnosis.component';
+import {StoreModule} from '@ngrx/store';
 
 describe('DiagnosisComponent', () => {
   let component: DiagnosisComponent;
@@ -8,6 +9,7 @@ describe('DiagnosisComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [StoreModule.forRoot({})],
       declarations: [DiagnosisComponent]
     })
       .compileComponents();
