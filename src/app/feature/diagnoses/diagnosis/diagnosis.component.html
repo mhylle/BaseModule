@@ -1,5 +1,14 @@
-<ng-container *ngIf="selectedDiagnosis$|async as diagnosis">
-  <div>{{diagnosis.name}}</div>
-  <div>{{diagnosis.description}}</div>
-</ng-container>
+<div  class="diagnoseSelection">
+  <ng-container *ngIf="selectedDiagnosis$|async as diagnosis; else noselection">
+    <div class="id">{{diagnosis.id}}</div>
+    <div class="details">
+      <div>{{diagnosis.name}}</div>
+      <div>{{diagnosis.description}}</div>
+      <div>{{diagnosis.diagnosis}}</div>
+    </div>
+  </ng-container>
+  <ng-template #noselection>
+    <div>Select a diagnose to show details</div>
+  </ng-template>
+</div>
 <router-outlet></router-outlet>

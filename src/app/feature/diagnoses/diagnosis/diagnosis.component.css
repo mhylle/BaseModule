@@ -1,0 +1,36 @@
+.diagnoseSelection {
+  display: flex;
+  gap: 1em;
+  border-bottom: 1px solid lightblue;
+  padding: 2em;
+  height: 3.5em;
+}
+
+.id {
+  padding: 0.25em;
+  position: relative;
+  height: 100%;
+  width: 2em;
+  color: whitesmoke;
+  font-weight: 600;
+  background-color: cadetblue;
+  transition: all 250ms ease-in-out;
+}
+
+.id:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #ff8000;
+}
+
+.id:hover {
+  background-color: #6f119f;
+}
+
+.details {
+  border-bottom: 2px solid lightblue;
+}
