@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'addresses',
     loadChildren: () => import('./feature/addresses/addresses.module').then(m => m.AddressesModule)
   },
-  {path: '**', pathMatch: 'full', redirectTo: '/'} // catch any unfound routes and redirect to home page
+  {path: '**', pathMatch: 'full', redirectTo: '/'}
 ];
 
 @NgModule({

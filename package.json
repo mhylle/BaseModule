@@ -11,7 +11,7 @@
     "json-server": "json-server --watch db.json",
     "start-pwa": "ng build --prod && http-server -p 8081 -c-1 dist/BaseModule",
     "start-docserver": "npx compodoc -p tsconfig.doc.json --includes markdown && http-server -p 8080 -c-1 documentation",
-    "compodoc": "npx compodoc -p tsconfig.doc.json --includes markdown"
+    "compodoc": "npx compodoc -p tsconfig.doc.json"
   },
   "private": true,
   "dependencies": {

@@ -6,7 +6,7 @@ import {AddressDetailsComponent} from './address-details/address-details.compone
 
 
 const routes: Routes = [
-  {path: '', component: AddressesComponent},
+  {path: '', component: AddressesComponent}
 ];
 
 @NgModule({

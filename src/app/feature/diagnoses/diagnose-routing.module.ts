@@ -14,7 +14,7 @@ const routes: Routes = [
         component: DiagnoseListComponent
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
