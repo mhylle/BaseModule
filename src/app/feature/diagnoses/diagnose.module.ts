@@ -7,7 +7,7 @@ import * as fromDiagnoseState from './store/reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {DiagnoseEffects} from './store/effects/diagnose.effects';
 import {DiagnoseDetailsComponent} from './diagnose-list/diagnose-details/diagnose-details.component';
-import { DiagnosisComponent } from './diagnosis/diagnosis.component';
+import {DiagnosisComponent} from './diagnosis/diagnosis.component';
 
 @NgModule({
   declarations: [DiagnoseRoutingModule.components, DiagnosisComponent],

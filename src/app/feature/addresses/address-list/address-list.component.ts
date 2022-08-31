@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Address} from '../model/address.model';
 import {faSortAlphaDown, faSortAlphaUp} from '@fortawesome/free-solid-svg-icons';
 import {Observable, Subject} from 'rxjs';
@@ -11,7 +11,6 @@ import {selectSortedAddresses} from '../store/reducers';
   selector: 'sse-address-list',
   templateUrl: './address-list.component.html',
   styleUrls: ['./address-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddressListComponent implements OnInit, OnDestroy {
   public faSortUp = faSortAlphaUp;

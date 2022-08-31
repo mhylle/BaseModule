@@ -1,5 +1,5 @@
 <div class="container diagnoses">
   <div *ngFor="let diagnose of diagnoses$|async">
-    <sse-diagnose-details [diagnose]="diagnose" (click)="selectDiagnose(diagnose)"></sse-diagnose-details>
+    <sse-diagnose-details (click)="selectDiagnose(diagnose)" [diagnose]="diagnose"></sse-diagnose-details>
   </div>
 </div>

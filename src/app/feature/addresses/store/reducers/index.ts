@@ -15,7 +15,7 @@ export const reducers: ActionReducerMap<AddressState> = {
   addresses: fromAddresses.addressReducer
 };
 
-export const selectAddressState = createFeatureSelector< AddressState>('addresses');
+export const selectAddressState = createFeatureSelector<AddressState>('addresses');
 
 export const selectAddressEntitiesState = createSelector(
   selectAddressState,

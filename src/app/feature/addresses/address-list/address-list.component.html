@@ -1,3 +1,4 @@
+<div *ngIf="addresses$|async as addresses">There are {{addresses.length}} Adresses</div>
 <div class="addresses header">
   <div (click)="sort('line', sortDirection === 'asc'? 'desc': 'asc')" class="item">Line
     <fa-icon *ngIf="sortColumn === 'line' && sortDirection === 'asc' " [icon]="faSortDown"></fa-icon>
