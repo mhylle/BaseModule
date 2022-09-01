@@ -1,10 +1,22 @@
-import {Observable} from 'rxjs';
-import {Action} from '@ngrx/store';
-import {TestBed} from '@angular/core/testing';
-import {provideMockActions} from '@ngrx/effects/testing';
+describe('Patient Effects', () => {
+  // let effect: PatientEffects;
+  // let store: MockStore;
+// TODO implement test
+//   const initialState = {
+//     loaded: false
+//   };
 
-const action$ = new Observable<Action>();
-
-TestBed.configureTestingModule({
-  providers: [provideMockActions(() => action$)]
+  // beforeEach(() => {
+  //   TestBed.configureTestingModule({
+  //     imports: [StoreModule.forRoot({}), EffectsModule.forRoot({}), PatientsModule],
+  //     providers: [provideMockStore({initialState})]
+  //   });
+  //   store = TestBed.inject(MockStore);
+  //   effect = TestBed.inject(PatientEffects);
+  // });
+  //
+  // it('should react to a patient load actions', () => {
+  //   expect(effect.loadPatients$).toBeDefined();
+  // });
 });
+
