@@ -5,12 +5,12 @@ import {Store} from '@ngrx/store';
 import {getSelectedPatient, UpdatePatient} from '../../store';
 import {Observable} from 'rxjs';
 import {FormControl, FormGroup} from '@angular/forms';
-import {map} from 'rxjs/operators';
+import {tap} from 'rxjs/operators';
 
 interface PatientForm {
   id: FormControl<number>;
-  firstName: FormControl<string>;
-  lastName: FormControl<string>;
+  first_name: FormControl<string>;
+  last_name: FormControl<string>;
   email: FormControl<string>;
   gender: FormControl<string>;
   diagnosis: FormControl<number>;
@@ -33,8 +33,8 @@ export class PatientEditComponent implements OnInit {
   patientFormGroup = new FormGroup<PatientForm>(
     {
       id: new FormControl<number>(-1),
-      firstName: new FormControl<string>(''),
-      lastName: new FormControl<string>(''),
+      first_name: new FormControl<string>(''),
+      last_name: new FormControl<string>(''),
       email: new FormControl<string>(''),
       gender: new FormControl<string>(''),
       diagnosis: new FormControl<number>(0),
@@ -49,20 +49,11 @@ export class PatientEditComponent implements OnInit {
    * Select the patient from the store.
    */
   ngOnInit() {
-    this.patient$ = this.store.select(getSelectedPatient);
-
-    // TODO: Implement better way of doing this. Currently there is a memory leak, as we are subscribing and not unsubscribing.
-    this.patient$.pipe(map(patient => {
+    this.patient$ = this.store.select(getSelectedPatient).pipe(tap(patient => {
       if (patient) {
-        this.patientFormGroup.controls.id.setValue(patient.id);
-        this.patientFormGroup.controls.firstName.setValue(patient.first_name);
-        this.patientFormGroup.controls.lastName.setValue(patient.last_name);
-        this.patientFormGroup.controls.email.setValue(patient.email);
-        this.patientFormGroup.controls.gender.setValue(patient.gender);
-        this.patientFormGroup.controls.diagnosis.setValue(patient.diagnosis);
-        this.patientFormGroup.controls.address.setValue(patient.address);
+        this.patientFormGroup.patchValue(patient);
       }
-    })).subscribe();
+    }));
   }
 
   /**
@@ -71,8 +62,8 @@ export class PatientEditComponent implements OnInit {
   update() {
     const patient: Patient = {
       id: this.patientFormGroup.controls.id.value,
-      first_name: this.patientFormGroup.controls.firstName.value,
-      last_name: this.patientFormGroup.controls.lastName.value,
+      first_name: this.patientFormGroup.controls.first_name.value,
+      last_name: this.patientFormGroup.controls.last_name.value,
       address: this.patientFormGroup.controls.address.value,
       gender: this.patientFormGroup.controls.gender.value,
       diagnosis: this.patientFormGroup.controls.diagnosis.value,
