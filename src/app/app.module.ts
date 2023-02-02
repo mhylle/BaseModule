@@ -17,6 +17,7 @@ import {environment} from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {DefaultRouterStateSerializer, RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {ServiceWorkerModule} from '@angular/service-worker';
+import {NgxHotjarModule, NgxHotjarRouterModule} from 'ngx-hotjar';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,8 @@ import {ServiceWorkerModule} from '@angular/service-worker';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    NgxHotjarModule.forRoot(environment.hj),
+    NgxHotjarRouterModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

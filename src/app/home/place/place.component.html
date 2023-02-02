@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="header">
+    <div>{{icon}}</div>
+    <div>
+      <div>{{headerText}}</div>
+      <div>{{headerSubText}}</div>
+    </div>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+  <div class="footer">
+    <button (click)="performAction('action1')">Fortryd</button>
+    <button (click)="performAction('action2')">Næste</button>
+  </div>
+</div>

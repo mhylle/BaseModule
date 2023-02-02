@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Treatment} from './treatment.model';
 
 @Component({
   selector: 'sse-home',
@@ -6,8 +7,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  editableTreatment: Treatment;
   constructor() {
+    this.editableTreatment = {
+      name: 'I am being edited'
+    };
     // inject http service here
   }
 
@@ -16,4 +20,15 @@ export class HomeComponent implements OnInit {
     // get diagnosis data from server
   }
 
+  isEnabled(type: string) {
+    if (type === 'vulnerable') {
+      return true;
+    }
+    return type === 'treatment';
+
+  }
+
+  doAction(action: string) {
+    console.log('action in home', action);
+  }
 }

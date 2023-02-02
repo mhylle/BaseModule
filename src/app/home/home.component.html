@@ -2,4 +2,19 @@
   <div>This is the home page for the base module.</div>
   <div>This project provides a basic overview of how you would implement a simple data centric application.</div>
   <div>For this specific branch we are demonstrating how it would be implemented using NGRX.</div>
+
+
+  <ng-container *ngIf="isEnabled('treatment')">
+    <app-place [icon]="'Icon1'"
+               [headerText]="'This is a treatment'"
+               [headerSubText]="'This is my subtext'"
+    (actionPerformed)="doAction($event)">
+      <app-treatment></app-treatment>
+    </app-place>
+  </ng-container>
+  <ng-container *ngIf="isEnabled('vulnerable')">
+    <app-place [icon]="'Icon2'" [headerText]="'This is another treatment'">
+      <app-treatment [treatment]="editableTreatment"></app-treatment>
+    </app-place>
+  </ng-container>
 </div>
